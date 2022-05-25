@@ -5,7 +5,7 @@ node {
   stage('========== Build image ==========') {
     //app = docker.build("jenkins-docker-pipeline/my-image")
     BUILD_FULL = sh (
-       script: "./swa/mk_img.sh ",
+       script: "./mk_img.sh ",
        returnStatus: true
     ) == 0
     echo "Build full flag: ${BUILD_FULL}"
