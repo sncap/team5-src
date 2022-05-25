@@ -1,0 +1,26 @@
+apiVersion: serving.kubeflow.org/v1alpha2
+kind: InferenceService
+metadata:
+  name: cancer
+  namespace: myspace
+  annotations:
+    sidecar.istio.io/inject: "false"
+spec:
+  default:
+    predictor:
+      serviceAccountName: kfserving-sa
+      sklearn:
+        storageUri: 's3://model/cancer/'
+        resources:
+          limits:
+            cpu: 100m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+    transformer:
+      custom:
+        container:
+          image: amagong/cancer-transformer:0.0.1
+
+
