@@ -1,0 +1,29 @@
+# Source: Genesis/charts/bdlstudio/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-processing-cancer
+  labels:
+    app: data-processing-cancer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-processing-cancer
+  template:
+    metadata:
+      labels:
+        app: data-processing-cancer
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+      - name: data-processing-cancer
+        image: swa/data_processing/cancer:v1.0
+        resources:
+          limits:
+            cpu: 400m
+            memory: 1000Mi
+          requests:
+            cpu: 400m
+            memory: 500Mi
