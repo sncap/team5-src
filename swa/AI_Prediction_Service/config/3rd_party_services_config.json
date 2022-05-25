@@ -1,0 +1,9 @@
+{
+  "rabbit_config": {
+    "ip": "34.145.3.171",
+    "port": "5672",
+    "queue_name": "park",
+    "id": "rabbitmq",
+    "passwd": "rabbitmq"
+  }
+}

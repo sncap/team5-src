@@ -1,0 +1,13 @@
+{
+  "common_config": {
+    "cifar10_file_path": "data_sample/cifar10/test/",
+    "cancer_file_path": "data_sample/cancer/data.csv"
+  },
+  "rabbit_config": {
+    "ip": "34.145.3.171",
+    "port": "5672",
+    "queue_name": "park",
+    "id": "rabbitmq",
+    "passwd": "rabbitmq"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "rabbit_config": {
+    "ip": "70.70.10.39",
+    "port": "5672",
+    "queue_name": "park",
+    "id": "park",
+    "passwd": "1111"
+  },
+
+  "prediction_publisher_config": {
+    "ip": "70.70.10.39",
+    "port": "5672",
+    "queue_name": "park",
+    "id": "park",
+    "passwd": "1111"
+  },
+
+  "predict_server_config": {
+    "ip": "70.70.202.133",
+    "port": "3000",
+    "url": "/swa/prediction"
+  },
+
+  "cifar10_cls_service_config": {
+    "ip": "70.70.10.39",
+    "port": "5672",
+    "queue_name": "park",
+    "id": "park",
+    "passwd": "1111"
+  },
+
+  "cancer_dt_service": {
+    "ip": "70.70.10.39",
+    "port": "5672",
+    "queue_name": "park",
+    "id": "park",
+    "passwd": "1111"
+  }
+}
