@@ -19,7 +19,7 @@ spec:
         kubernetes.io/os: linux
       containers:
       - name: 3rd-party-app-cancer
-        image: sncap/3rd_party_app_cancer:v1.0
+        image: sncap/3rd_party_app_cancer:v1.1
         resources:
           limits:
             cpu: 400m
