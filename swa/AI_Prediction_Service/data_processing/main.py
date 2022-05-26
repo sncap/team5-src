@@ -24,6 +24,21 @@ import json
 
 import time
 import requests
+
+def send_dlq(config, data, reason):
+    error_config = config
+    if 'CIFAR10' in config['rabbit_config']['topic'] :
+        error_config['rabbit_config']['topic'] = 'CIFAR10_DLQ'
+    else:
+        error_config['rabbit_config']['topic'] = 'CANCER_DLQ'
+    data_publisher = DataPublisher(config['rabbit_config'])
+    msg = json.dumps({
+        "data": data
+    })
+
+    print('[ERROR]Send Dead Letter Queue([{}]) for that reason {}'.format(error_config['rabbit_config']['topic'], reason))
+    data_publisher.send_msg(msg)
+
 def worker(item, config):
 
     data_sender = DataSender(config['rabbit_config'])
@@ -39,7 +54,7 @@ def worker(item, config):
     print(source_topic_name)
     response = data_sender.predict(s_msg)
     if type(response) is requests.exceptions.ConnectionError:
-        print('connection error: ', response)
+        send_dlq(config, data, response)
     else:
         try:
             res = response.content
@@ -57,7 +72,7 @@ def worker(item, config):
             data_publisher.send_msg(msg)
             print('{} | {} | {} | {}ms'.format(multiprocessing.current_process(), topic_name, res['predictions'], round((time.time() - start_time) * 1000), 2))
         except Exception as e:
-            print('Exception', e)
+            send_dlq(config, data ,e) 
 
 
 
