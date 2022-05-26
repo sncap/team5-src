@@ -9,10 +9,10 @@ spec:
   default:
     predictor:
       serviceAccountName: kfserving-sa
-      containerConcurrency: 10
-      minReplicas: 0
+#       containerConcurrency: 10
+#       minReplicas: 0
       sklearn:
-        storageUri: 'gs://team5-model-space/model/cancer/2/'
+        storageUri: 'gs://team5-model-space/model/cancer/1/'
         resources:
           limits:
             cpu: 100m
