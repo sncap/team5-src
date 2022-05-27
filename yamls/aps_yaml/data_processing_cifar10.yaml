@@ -42,5 +42,5 @@ spec:
   metrics:
   - resource:
       name: cpu  # HPA를 구성할 리소스(CPU, MEM 등)
-      targetAverageUtilization: 60  # CPU 사용률이 60% 이상일 경우 생성
+      targetAverageUtilization: 20  # CPU 사용률이 60% 이상일 경우 생성
     type: Resource  # 리소스 타입 선언
