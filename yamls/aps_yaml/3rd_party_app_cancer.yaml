@@ -37,7 +37,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment  #  스케일 아웃할 타겟의 종류 (deployment, replicaset 등)
     name: 3rd-party-app-cancer
-  minReplicas: 1  # 최소 replicas 개수
+  minReplicas: 3  # 최소 replicas 개수
   maxReplicas: 5  # 최대 replicas 개수
   metrics:
   - resource:
