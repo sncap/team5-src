@@ -92,6 +92,7 @@ if __name__ == '__main__':
 
     while True:
         time.sleep(interval)
+        print('AV-03 GIT PUSH SYNC TEST')
         msg = get_msg(config['common_config'], topic)
         data_publisher.send_msg(msg)
     '''    
