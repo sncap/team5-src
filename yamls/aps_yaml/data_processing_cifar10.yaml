@@ -22,10 +22,10 @@ spec:
         image: sncap/data_processing_cifar10:v1.1
         resources:
           limits:
-            cpu: 400m
+            cpu: 300m
             memory: 1000Mi
           requests:
-            cpu: 400m
+            cpu: 100m
             memory: 500Mi
 ---
 apiVersion: autoscaling/v2beta1
