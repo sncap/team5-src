@@ -40,7 +40,7 @@ def send_dlq(config, data, reason):
     data_publisher.send_msg(msg)
 
 def worker(item, config):
-
+    print("AV-03 TEST New Version Release")
     data_sender = DataSender(config['rabbit_config'])
     data_publisher = DataPublisher(config['rabbit_config'])
     start_time = time.time()
