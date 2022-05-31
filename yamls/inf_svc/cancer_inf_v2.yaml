@@ -10,7 +10,7 @@ spec:
     predictor:
       serviceAccountName: kfserving-sa
       sklearn:
-        storageUri: 'gs://team5-model-space/model/cancer/1/'
+        storageUri: 's3://model/cancer/'
         resources:
           limits:
             cpu: 100m
