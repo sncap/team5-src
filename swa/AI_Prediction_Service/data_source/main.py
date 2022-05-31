@@ -45,7 +45,7 @@ def get_msg(config, topic):
         index = random.randint(0, len(file_list)-1)
         data_source_path = os.path.join(file_path, file_list[index])
         img = cv2.imread(data_source_path)
-        img = np.expand_dims(img, axis=0)
+        #img = np.expand_dims(img, axis=0)
         msg = json.dumps({
             "data": img.tolist()
         })
