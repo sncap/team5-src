@@ -1,0 +1,1939 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_UNCAUGHT_CXX_EXCEPTION (0xe06d7363) at pc=0x00007ff9cfed4f69, pid=40756, tid=0x00000000000091bc
+#
+# JRE version: OpenJDK Runtime Environment (8.0_292-b10) (build 1.8.0_292-b10)
+# Java VM: OpenJDK 64-Bit Server VM (25.292-b10 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [KERNELBASE.dll+0x34f69]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/ojdkbuild/ojdkbuild/issues
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f795814800):  JavaThread "main" [_thread_in_native, id=37308, stack(0x000000f2d8a00000,0x000000f2d8bf0000)]
+
+siginfo: ExceptionCode=0xe06d7363, ExceptionInformation=0x0000000019930520 0x000000f2d8be6620 0x00007ff97693da78 0x00007ff9768c0000 
+
+Registers:
+RAX=0x00007ff9d27b47b1, RBX=0x00007ff97693da78, RCX=0x0000000000000018, RDX=0x000001f7fd660000
+RSP=0x000000f2d8be6460, RBP=0x000000f2d8be6719, RSI=0x000000f2d8be6620, RDI=0x0000000019930520
+R8 =0x000001f795814800, R9 =0x000001f795814800, R10=0x0000000000000000, R11=0x00007ff9768e4370
+R12=0x000000f2d8be67a8, R13=0x000001f794537320, R14=0x000001f784bdb850, R15=0x0000000000000000
+RIP=0x00007ff9cfed4f69, EFLAGS=0x0000000000000202
+
+Top of Stack: (sp=0x000000f2d8be6460)
+0x000000f2d8be6460:   000001f79562bd88 00007ff97693da78
+0x000000f2d8be6470:   000000f2d8be6620 0000000000000001
+0x000000f2d8be6480:   00000001e06d7363 0000000000000000
+0x000000f2d8be6490:   00007ff9cfed4f69 000000f200000004
+0x000000f2d8be64a0:   0000000019930520 000000f2d8be6620
+0x000000f2d8be64b0:   00007ff97693da78 00007ff9768c0000
+0x000000f2d8be64c0:   000001f794537320 000000f2d8be67a8
+0x000000f2d8be64d0:   000000f2d8be6620 000000f2d8be6719
+0x000000f2d8be64e0:   000000f2d8be6560 00007ff9d27c4a5f
+0x000000f2d8be64f0:   0000000019930520 0000000000000000
+0x000000f2d8be6500:   0000000000000000 00007ff9768c91a4
+0x000000f2d8be6510:   00007ff976945000 00007ff9768c0000
+0x000000f2d8be6520:   000052415827ea89 000000f2d8be6719
+0x000000f2d8be6530:   00007ff97693da78 00007ff9c63c6220
+0x000000f2d8be6540:   000000f2d8be65e0 000000f2d8be6719
+0x000000f2d8be6550:   000000f2d8be66c8 00007ff9768dfe23 
+
+Instructions: (pc=0x00007ff9cfed4f69)
+0x00007ff9cfed4f49:   8b d1 44 0f 47 c0 44 89 44 24 38 49 c1 e0 03 e8
+0x00007ff9cfed4f59:   1a d5 05 00 48 8d 4c 24 20 48 ff 15 9f 9d 18 00
+0x00007ff9cfed4f69:   0f 1f 44 00 00 48 8b 8c 24 c0 00 00 00 48 33 cc
+0x00007ff9cfed4f79:   e8 52 97 05 00 48 81 c4 d8 00 00 00 c3 cc 83 64 
+
+
+Register to memory mapping:
+
+RAX=0x00007ff9d27b47b1 is an unknown value
+RBX=0x00007ff97693da78 is an unknown value
+RCX=0x0000000000000018 is an unknown value
+RDX=0x000001f7fd660000 is an unknown value
+RSP=0x000000f2d8be6460 is pointing into the stack for thread: 0x000001f795814800
+RBP=0x000000f2d8be6719 is pointing into the stack for thread: 0x000001f795814800
+RSI=0x000000f2d8be6620 is pointing into the stack for thread: 0x000001f795814800
+RDI=0x0000000019930520 is an unknown value
+R8 =0x000001f795814800 is a thread
+R9 =0x000001f795814800 is a thread
+R10=0x0000000000000000 is an unknown value
+R11=0x00007ff9768e4370 is an unknown value
+R12=0x000000f2d8be67a8 is pointing into the stack for thread: 0x000001f795814800
+R13=0x000001f794537320 is an unknown value
+R14=0x000001f784bdb850 is an unknown value
+R15=0x0000000000000000 is an unknown value
+
+
+Stack: [0x000000f2d8a00000,0x000000f2d8bf0000],  sp=0x000000f2d8be6460,  free space=1945k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0x34f69]
+C  [VCRUNTIME140.dll+0x6220]
+C  0x00007ff9768f4c87
+C  0x00007ff9768fdb45
+C  0x00007ff9768f27d5
+C  0x000001f7958e9c8e
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+j  org.jpype.manager.TypeFactoryNative.newWrapper(JJ)V+0
+j  org.jpype.JPypeContext.newWrapper(J)V+16
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000001f7a8e0c000 JavaThread "Python Reference Queue" daemon [_thread_blocked, id=24736, stack(0x000000f2dddd0000,0x000000f2ddfc0000)]
+  0x000001f7a8c51000 JavaThread "Service Thread" daemon [_thread_blocked, id=30472, stack(0x000000f2dd9f0000,0x000000f2ddbe0000)]
+  0x000001f7a8c38000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=25584, stack(0x000000f2dd800000,0x000000f2dd9f0000)]
+  0x000001f7a8c36000 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=29176, stack(0x000000f2dd610000,0x000000f2dd800000)]
+  0x000001f7a8c32000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=40744, stack(0x000000f2dd420000,0x000000f2dd610000)]
+  0x000001f7a8c35000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=27228, stack(0x000000f2dd230000,0x000000f2dd420000)]
+  0x000001f7a8c1d000 JavaThread "Attach Listener" daemon [_thread_blocked, id=12568, stack(0x000000f2dd040000,0x000000f2dd230000)]
+  0x000001f7a8bb6000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=15356, stack(0x000000f2dce50000,0x000000f2dd040000)]
+  0x000001f7a8bad000 JavaThread "Finalizer" daemon [_thread_blocked, id=39492, stack(0x000000f2dcc60000,0x000000f2dce50000)]
+  0x000001f7a8ba6000 JavaThread "Reference Handler" daemon [_thread_blocked, id=1516, stack(0x000000f2dca70000,0x000000f2dcc60000)]
+=>0x000001f795814800 JavaThread "main" [_thread_in_native, id=37308, stack(0x000000f2d8a00000,0x000000f2d8bf0000)]
+
+Other Threads:
+  0x000001f7a8ba4800 VMThread [stack: 0x000000f2dc880000,0x000000f2dca70000] [id=39284]
+  0x000001f7a8ccb000 WatcherThread [stack: 0x000000f2ddbe0000,0x000000f2dddd0000] [id=3620]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 289792K, used 82033K [0x00000000eab00000, 0x00000000ffe80000, 0x0000000100000000)
+  eden space 235008K, 22% used [0x00000000eab00000,0x00000000ede74708,0x00000000f9080000)
+  from space 54784K, 53% used [0x00000000fc900000,0x00000000fe5a8010,0x00000000ffe80000)
+  to   space 56320K, 0% used [0x00000000f9080000,0x00000000f9080000,0x00000000fc780000)
+ ParOldGen       total 331264K, used 297794K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 89% used [0x00000000c0000000,0x00000000d22d09f8,0x00000000d4380000)
+ Metaspace       used 6605K, capacity 6782K, committed 6912K, reserved 1056768K
+  class space    used 641K, capacity 705K, committed 768K, reserved 1048576K
+
+Card table byte_map: [0x000001f7a4c90000,0x000001f7a4ea0000] byte_map_base: 0x000001f7a4690000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000651820a0
+ Begin Bits: [0x000001f7a5000000, 0x000001f7a6000000)
+ End Bits:   [0x000001f7a6000000, 0x000001f7a7000000)
+
+Polling page: 0x000001f795770000
+
+CodeCache: size=245760Kb used=7006Kb max_used=7026Kb free=238753Kb
+ bounds [0x000001f7958d0000, 0x000001f795fc0000, 0x000001f7a48d0000]
+ total_blobs=1631 nmethods=1313 adapters=230
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 5.331 Thread 0x000001f7a8c38000 nmethod 1209 0x000001f795f07790 code [0x000001f795f07940, 0x000001f795f07dc0]
+Event: 5.331 Thread 0x000001f7a8c38000 1210   !   3       java.util.Formatter$FormatSpecifier::index (53 bytes)
+Event: 5.331 Thread 0x000001f7a8c38000 nmethod 1210 0x000001f795f07f90 code [0x000001f795f08120, 0x000001f795f085a0]
+Event: 5.331 Thread 0x000001f7a8c38000 1213   !   3       java.util.Formatter$FormatSpecifier::precision (63 bytes)
+Event: 5.331 Thread 0x000001f7a8c38000 nmethod 1213 0x000001f795f08790 code [0x000001f795f08940, 0x000001f795f08d50]
+Event: 5.331 Thread 0x000001f7a8c38000 1215       3       sun.util.locale.provider.LocaleResources::removeEmptyReferences (33 bytes)
+Event: 5.331 Thread 0x000001f7a8c38000 nmethod 1215 0x000001f795f08f90 code [0x000001f795f09140, 0x000001f795f09840]
+Event: 5.331 Thread 0x000001f7a8c38000 1220       3       sun.util.locale.BaseLocale::equals (71 bytes)
+Event: 5.331 Thread 0x000001f7a8c38000 nmethod 1220 0x000001f795f09a90 code [0x000001f795f09c00, 0x000001f795f0a0f8]
+Event: 5.331 Thread 0x000001f7a8c38000 1216       3       sun.util.locale.provider.DecimalFormatSymbolsProviderImpl::getInstance (21 bytes)
+Event: 5.331 Thread 0x000001f7a8c38000 nmethod 1216 0x000001f795f0a1d0 code [0x000001f795f0a360, 0x000001f795f0a700]
+Event: 5.331 Thread 0x000001f7a8c38000 1217       3       java.text.DecimalFormatSymbols::<init> (15 bytes)
+Event: 5.331 Thread 0x000001f7a8c38000 nmethod 1217 0x000001f795f0a890 code [0x000001f795f0aa00, 0x000001f795f0abf0]
+Event: 5.331 Thread 0x000001f7a8c38000 1218   !   3       java.text.DecimalFormatSymbols::initialize (317 bytes)
+Event: 5.332 Thread 0x000001f7a8c38000 nmethod 1218 0x000001f795f0acd0 code [0x000001f795f0b0a0, 0x000001f795f0d320]
+Event: 5.332 Thread 0x000001f7a8c38000 1219       3       sun.util.locale.provider.LocaleResources::getDecimalFormatSymbolsData (213 bytes)
+Event: 5.333 Thread 0x000001f7a8c38000 nmethod 1219 0x000001f795f0e890 code [0x000001f795f0ed40, 0x000001f795f12560]
+Event: 5.333 Thread 0x000001f7a8c38000 1222       3       java.lang.String::format (16 bytes)
+Event: 5.334 Thread 0x000001f7a8c38000 nmethod 1222 0x000001f795f13c50 code [0x000001f795f13e80, 0x000001f795f14a60]
+Event: 5.334 Thread 0x000001f7a8c38000 1223       3       java.util.Formatter::<init> (18 bytes)
+Event: 5.334 Thread 0x000001f7a8c38000 nmethod 1223 0x000001f795f15110 code [0x000001f795f152e0, 0x000001f795f15990]
+Event: 5.334 Thread 0x000001f7a8c38000 1224       3       java.lang.StringBuilder::append (6 bytes)
+Event: 5.334 Thread 0x000001f7a8c38000 nmethod 1224 0x000001f795f15d10 code [0x000001f795f15e80, 0x000001f795f160f0]
+Event: 5.336 Thread 0x000001f7a8c32000 nmethod 1172 0x000001f795f19bd0 code [0x000001f795f19da0, 0x000001f795f1ab78]
+Event: 5.336 Thread 0x000001f7a8c32000 1176       4       java.util.regex.Pattern$BmpCharProperty::match (50 bytes)
+Event: 5.338 Thread 0x000001f7a8c32000 nmethod 1176 0x000001f795f16890 code [0x000001f795f16a00, 0x000001f795f16e38]
+Event: 5.338 Thread 0x000001f7a8c32000 1173       4       org.snu.ids.ha.ma.MCandidate::addAll (35 bytes)
+Event: 5.340 Thread 0x000001f7a8c35000 nmethod 1090 0x000001f795f23d10 code [0x000001f795f240a0, 0x000001f795f29120]
+Event: 5.340 Thread 0x000001f7a8c35000 1196       4       java.util.regex.Matcher::start (22 bytes)
+Event: 5.340 Thread 0x000001f7a8c35000 nmethod 1196 0x000001f795ef0a10 code [0x000001f795ef0b40, 0x000001f795ef0bb8]
+Event: 5.340 Thread 0x000001f7a8c35000 1126       4       java.util.regex.Pattern$BmpCharProperty::<init> (6 bytes)
+Event: 5.340 Thread 0x000001f7a8c35000 nmethod 1126 0x000001f795f16690 code [0x000001f795f167c0, 0x000001f795f16838]
+Event: 5.340 Thread 0x000001f7a8c35000 1137       4       java.util.concurrent.ConcurrentHashMap::setTabAt (19 bytes)
+Event: 5.340 Thread 0x000001f7a8c35000 nmethod 1137 0x000001f795f16490 code [0x000001f795f165c0, 0x000001f795f16618]
+Event: 5.340 Thread 0x000001f7a8c35000 1221       4       java.util.regex.Pattern$Node::match (27 bytes)
+Event: 5.340 Thread 0x000001f7a8c35000 nmethod 1221 0x000001f795f161d0 code [0x000001f795f16300, 0x000001f795f163b8]
+Event: 5.341 Thread 0x000001f7a8c38000 1226       3       java.util.Formatter$FormatSpecifier::checkNumeric (168 bytes)
+Event: 5.341 Thread 0x000001f7a8c35000 1232       4       java.util.regex.Pattern$Curly::match (86 bytes)
+Event: 5.341 Thread 0x000001f7a8c38000 nmethod 1226 0x000001f795f183d0 code [0x000001f795f18640, 0x000001f795f192e0]
+Event: 5.341 Thread 0x000001f7a8c38000 1230       3       java.util.Formatter$FormatSpecifier::localizedMagnitude (327 bytes)
+Event: 5.342 Thread 0x000001f7a8c32000 nmethod 1173 0x000001f795f17750 code [0x000001f795f178c0, 0x000001f795f17e98]
+Event: 5.342 Thread 0x000001f7a8c32000 1240       4       java.util.regex.Matcher::reset (83 bytes)
+Event: 5.343 Thread 0x000001f7a8c38000 nmethod 1230 0x000001f795f1fa50 code [0x000001f795f1fe00, 0x000001f795f22280]
+Event: 5.343 Thread 0x000001f7a8c38000 1235       3       java.lang.AbstractStringBuilder::append (54 bytes)
+Event: 5.343 Thread 0x000001f7a8c38000 nmethod 1235 0x000001f795f1ee10 code [0x000001f795f1efe0, 0x000001f795f1f8f0]
+Event: 5.343 Thread 0x000001f7a8c38000 1227       3       java.util.regex.Matcher::find (35 bytes)
+Event: 5.343 Thread 0x000001f7a8c38000 nmethod 1227 0x000001f795f1e550 code [0x000001f795f1e700, 0x000001f795f1ec60]
+Event: 5.343 Thread 0x000001f7a8c38000 1236       3       java.util.Currency::getInstance (234 bytes)
+Event: 5.343 Thread 0x000001f7a8c38000 nmethod 1236 0x000001f795f2f7d0 code [0x000001f795f2fb00, 0x000001f795f313b0]
+Event: 5.343 Thread 0x000001f7a8c35000 nmethod 1232 0x000001f795f1c310 code [0x000001f795f1c480, 0x000001f795f1ca78]
+Event: 5.343 Thread 0x000001f7a8c38000 1237       3       java.util.Currency::getMainTableEntry (49 bytes)
+Event: 5.343 Thread 0x000001f7a8c35000 1241       4       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+Event: 5.344 Thread 0x000001f7a8c38000 nmethod 1237 0x000001f795f1bd50 code [0x000001f795f1bec0, 0x000001f795f1c1d0]
+Event: 5.344 Thread 0x000001f7a8c38000 1238       3       java.util.Currency::getInstance (214 bytes)
+Event: 5.344 Thread 0x000001f7a8c32000 nmethod 1240 0x000001f795f325d0 code [0x000001f795f32720, 0x000001f795f32a78]
+Event: 5.344 Thread 0x000001f7a8c38000 nmethod 1238 0x000001f795f32c50 code [0x000001f795f32f40, 0x000001f795f34550]
+Event: 5.344 Thread 0x000001f7a8c38000 1233       3       java.util.regex.Pattern$CharProperty::match (56 bytes)
+Event: 5.344 Thread 0x000001f7a8c38000 nmethod 1233 0x000001f795f1dd50 code [0x000001f795f1dee0, 0x000001f795f1e3d0]
+Event: 5.344 Thread 0x000001f7a8c38000 1234       3       java.lang.Character::codePointAt (51 bytes)
+Event: 5.344 Thread 0x000001f7a8c38000 nmethod 1234 0x000001f795f1d350 code [0x000001f795f1d500, 0x000001f795f1dbb0]
+Event: 5.344 Thread 0x000001f7a8c38000 1244       3       java.lang.String::trim (77 bytes)
+Event: 5.345 Thread 0x000001f7a8c32000 1246  s    4       java.util.Hashtable::put (104 bytes)
+Event: 5.345 Thread 0x000001f7a8c38000 nmethod 1244 0x000001f795f2f010 code [0x000001f795f2f1a0, 0x000001f795f2f650]
+Event: 5.345 Thread 0x000001f7a8c38000 1245   !   3       sun.misc.FloatingDecimal::readJavaFormatString (794 bytes)
+Event: 5.345 Thread 0x000001f7a8c35000 nmethod 1241 0x000001f795f36b90 code [0x000001f795f36ce0, 0x000001f795f36ff8]
+Event: 5.346 Thread 0x000001f7a8c38000 nmethod 1245 0x000001f795f37210 code [0x000001f795f377c0, 0x000001f795f3b660]
+Event: 5.346 Thread 0x000001f7a8c38000 1247       3       java.util.Hashtable::addEntry (87 bytes)
+Event: 5.346 Thread 0x000001f7a8c35000 1252       4       sun.misc.FloatingDecimal$ASCIIToBinaryBuffer::<init> (26 bytes)
+Event: 5.347 Thread 0x000001f7a8c38000 nmethod 1247 0x000001f795f2e4d0 code [0x000001f795f2e680, 0x000001f795f2ece0]
+Event: 5.347 Thread 0x000001f7a8c38000 1243       3       sun.misc.FDBigInteger::leftShift (395 bytes)
+Event: 5.347 Thread 0x000001f7a8c35000 nmethod 1252 0x000001f795f1d050 code [0x000001f795f1d180, 0x000001f795f1d218]
+Event: 5.347 Thread 0x000001f7a8c35000 1253       4       java.util.Hashtable$Entry::<init> (26 bytes)
+Event: 5.347 Thread 0x000001f7a8c35000 nmethod 1253 0x000001f795f3ebd0 code [0x000001f795f3ed00, 0x000001f795f3ed98]
+Event: 5.347 Thread 0x000001f7a8c35000 1254   !   4       sun.misc.FloatingDecimal::readJavaFormatString (794 bytes)
+Event: 5.347 Thread 0x000001f7a8c38000 nmethod 1243 0x000001f795f35150 code [0x000001f795f35380, 0x000001f795f36250]
+Event: 5.347 Thread 0x000001f7a8c38000 1248       3       java.lang.Character::hashCode (8 bytes)
+Event: 5.347 Thread 0x000001f7a8c38000 nmethod 1248 0x000001f795f1b950 code [0x000001f795f1baa0, 0x000001f795f1bc58]
+Event: 5.347 Thread 0x000001f7a8c38000 1249       3       java.lang.Character::hashCode (2 bytes)
+Event: 5.347 Thread 0x000001f7a8c38000 nmethod 1249 0x000001f795f17450 code [0x000001f795f175a0, 0x000001f795f176d8]
+Event: 5.347 Thread 0x000001f7a8c38000 1250       3       java.lang.Character::valueOf (21 bytes)
+Event: 5.347 Thread 0x000001f7a8c38000 nmethod 1250 0x000001f795f2de90 code [0x000001f795f2e000, 0x000001f795f2e338]
+Event: 5.347 Thread 0x000001f7a8c38000 1251       3       java.lang.Character::<init> (10 bytes)
+Event: 5.347 Thread 0x000001f7a8c38000 nmethod 1251 0x000001f795f2da90 code [0x000001f795f2dbe0, 0x000001f795f2dd98]
+Event: 5.347 Thread 0x000001f7a8c38000 1231       3       java.util.Formatter$FormatSpecifier::getZero (36 bytes)
+Event: 5.347 Thread 0x000001f7a8c38000 nmethod 1231 0x000001f795f3f9d0 code [0x000001f795f3fb80, 0x000001f795f400d0]
+Event: 5.347 Thread 0x000001f7a8c38000 1228       3       java.util.Formatter$FormatSpecifier::leadingSign (82 bytes)
+Event: 5.348 Thread 0x000001f7a8c38000 nmethod 1228 0x000001f795f40350 code [0x000001f795f40660, 0x000001f795f41fe0]
+Event: 5.348 Thread 0x000001f7a8c38000 1229       3       java.util.Formatter$FormatSpecifier::adjustWidth (29 bytes)
+Event: 5.348 Thread 0x000001f7a8c38000 nmethod 1229 0x000001f795f3f410 code [0x000001f795f3f580, 0x000001f795f3f898]
+Event: 5.348 Thread 0x000001f7a8c38000 1258       3       java.util.Formatter$FormatSpecifier::checkBadFlags (39 bytes)
+Event: 5.348 Thread 0x000001f7a8c38000 nmethod 1258 0x000001f795f43150 code [0x000001f795f43300, 0x000001f795f437a0]
+Event: 5.348 Thread 0x000001f7a8c38000 1262       3       java.util.regex.Pattern$Curly::match (86 bytes)
+Event: 5.349 Thread 0x000001f7a8c38000 nmethod 1262 0x000001f795f43a10 code [0x000001f795f43bc0, 0x000001f795f441c0]
+Event: 5.349 Thread 0x000001f7a8c38000 1261       3       org.snu.ids.ha.constants.Condition::getCondList (53 bytes)
+Event: 5.349 Thread 0x000001f7a8c38000 nmethod 1261 0x000001f795f44390 code [0x000001f795f44580, 0x000001f795f44f90]
+Event: 5.349 Thread 0x000001f7a8c38000 1256       3       java.lang.CharacterDataLatin1::isOtherUppercase (18 bytes)
+Event: 5.349 Thread 0x000001f7a8c38000 nmethod 1256 0x000001f795f3ee50 code [0x000001f795f3efc0, 0x000001f795f3f218]
+Event: 5.349 Thread 0x000001f7a8c38000 1257       3       java.lang.CharacterDataLatin1::getPropertiesEx (11 bytes)
+Event: 5.349 Thread 0x000001f7a8c38000 nmethod 1257 0x000001f795f45550 code [0x000001f795f456a0, 0x000001f795f45838]
+Event: 5.349 Thread 0x000001f7a8c38000 1259       3       java.util.Formatter$FormatSpecifier::print (243 bytes)
+Event: 5.349 Thread 0x000001f7a8c38000 nmethod 1259 0x000001f795f45910 code [0x000001f795f45b60, 0x000001f795f46430]
+Event: 5.349 Thread 0x000001f7a8c38000 1260       3       java.util.Formatter$FormatSpecifier::conversion (94 bytes)
+Event: 5.350 Thread 0x000001f7a8c32000 nmethod 1246 0x000001f795f49e10 code [0x000001f795f49fc0, 0x000001f795f4a9c8]
+Event: 5.350 Thread 0x000001f7a8c38000 nmethod 1260 0x000001f795f485d0 code [0x000001f795f48840, 0x000001f795f49630]
+Event: 5.350 Thread 0x000001f7a8c32000 1255       4       sun.misc.FDBigInteger::leftShift (395 bytes)
+Event: 5.350 Thread 0x000001f7a8c38000 1269   !   3       java.util.Formatter::format (271 bytes)
+Event: 5.350 Thread 0x000001f7a8c38000 nmethod 1269 0x000001f795f4b050 code [0x000001f795f4b300, 0x000001f795f4c3f0]
+Event: 5.350 Thread 0x000001f7a8c38000 1271       1       org.snu.ids.ha.ma.Morpheme::getTagNum (9 bytes)
+Event: 5.350 Thread 0x000001f7a8c38000 nmethod 1271 0x000001f795f46e10 code [0x000001f795f46f60, 0x000001f795f47078]
+Event: 5.350 Thread 0x000001f7a8c38000 1266       3       java.util.Formatter::parse (151 bytes)
+Event: 5.351 Thread 0x000001f7a8c38000 nmethod 1266 0x000001f795f54610 code [0x000001f795f54a40, 0x000001f795f574a0]
+Event: 5.351 Thread 0x000001f7a8c38000 1263       3       java.util.ArrayList::toArray (60 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1263 0x000001f795f58c10 code [0x000001f795f58da0, 0x000001f795f59360]
+Event: 5.352 Thread 0x000001f7a8c38000 1268   !   3       java.util.Locale::getDefault (132 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1268 0x000001f795f59490 code [0x000001f795f59660, 0x000001f795f59e80]
+Event: 5.352 Thread 0x000001f7a8c38000 1264       3       java.util.Formatter$Conversion::isFloat (72 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1264 0x000001f795f46a90 code [0x000001f795f46be0, 0x000001f795f46d78]
+Event: 5.352 Thread 0x000001f7a8c38000 1270       3       java.util.Formatter$FormatSpecifier::trailingSign (26 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1270 0x000001f795f5a0d0 code [0x000001f795f5a2a0, 0x000001f795f5aa80]
+Event: 5.352 Thread 0x000001f7a8c38000 1267       3       java.lang.StringBuilder::append (9 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1267 0x000001f795f5af90 code [0x000001f795f5b120, 0x000001f795f5b520]
+Event: 5.352 Thread 0x000001f7a8c38000 1239       1       java.lang.Integer::intValue (5 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1239 0x000001f795f467d0 code [0x000001f795f46920, 0x000001f795f46a38]
+Event: 5.352 Thread 0x000001f7a8c38000 1242       1       java.lang.Byte::byteValue (5 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1242 0x000001f795f5b690 code [0x000001f795f5b7e0, 0x000001f795f5b8f8]
+Event: 5.352 Thread 0x000001f7a8c38000 1275       3       sun.misc.FDBigInteger::size (10 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1275 0x000001f795f5b950 code [0x000001f795f5baa0, 0x000001f795f5bbf8]
+Event: 5.352 Thread 0x000001f7a8c38000 1280       3       java.util.Formatter$FormatSpecifier::addZeros (161 bytes)
+Event: 5.352 Thread 0x000001f7a8c38000 nmethod 1280 0x000001f795f5bc90 code [0x000001f795f5be40, 0x000001f795f5c470]
+Event: 5.352 Thread 0x000001f7a8c38000 1278       3       java.lang.Double::doubleToLongBits (33 bytes)
+Event: 5.353 Thread 0x000001f7a8c38000 nmethod 1278 0x000001f795f5c690 code [0x000001f795f5c7e0, 0x000001f795f5c9d8]
+Event: 5.353 Thread 0x000001f7a8c38000 1279       1       java.util.Formatter$FixedString::index (3 bytes)
+Event: 5.353 Thread 0x000001f7a8c38000 nmethod 1279 0x000001f795f5ca50 code [0x000001f795f5cba0, 0x000001f795f5ccb8]
+Event: 5.353 Thread 0x000001f7a8c36000 nmethod 1092 0x000001f795f5cd10 code [0x000001f795f5d120, 0x000001f795f62ea0]
+Event: 5.353 Thread 0x000001f7a8c38000 1281  s    3       java.lang.StringBuffer::append (16 bytes)
+Event: 5.353 Thread 0x000001f7a8c36000 1272       4       org.snu.ids.ha.ma.MCandidate::calcLnprOfTagging (184 bytes)
+Event: 5.353 Thread 0x000001f7a8c38000 nmethod 1281 0x000001f795f47e10 code [0x000001f795f47fa0, 0x000001f795f48440]
+Event: 5.353 Thread 0x000001f7a8c38000 1284       3       java.util.Formatter$FormatSpecifier::checkInteger (91 bytes)
+Event: 5.353 Thread 0x000001f7a8c38000 nmethod 1284 0x000001f795f470d0 code [0x000001f795f472c0, 0x000001f795f47b90]
+Event: 5.353 Thread 0x000001f7a8c38000 1283       3       java.util.Formatter$FormatSpecifier::checkFloat (98 bytes)
+Event: 5.353 Thread 0x000001f7a8c38000 nmethod 1283 0x000001f795f53810 code [0x000001f795f53a00, 0x000001f795f543e0]
+Event: 5.353 Thread 0x000001f7a8c38000 1282       3       java.lang.Integer::valueOf (32 bytes)
+Event: 5.354 Thread 0x000001f7a8c38000 nmethod 1282 0x000001f795f53190 code [0x000001f795f53300, 0x000001f795f53658]
+Event: 5.354 Thread 0x000001f7a8c38000 1285       3       sun.misc.FloatingDecimal::getBinaryToASCIIConverter (183 bytes)
+Event: 5.354 Thread 0x000001f7a8c38000 nmethod 1285 0x000001f795f52450 code [0x000001f795f52620, 0x000001f795f52e70]
+Event: 5.354 Thread 0x000001f7a8c38000 1288       3       java.util.Formatter$FormatSpecifier::print (463 bytes)
+Event: 5.356 Thread 0x000001f7a8c38000 nmethod 1288 0x000001f795f68bd0 code [0x000001f795f691a0, 0x000001f795f6d3d0]
+Event: 5.356 Thread 0x000001f7a8c38000 1294  s    2       java.util.Hashtable::get (69 bytes)
+Event: 5.356 Thread 0x000001f7a8c38000 nmethod 1294 0x000001f795f51c50 code [0x000001f795f51de0, 0x000001f795f52240]
+Event: 5.356 Thread 0x000001f7a8c38000 1295       3       java.util.Formatter$FormatSpecifier::printFloat (86 bytes)
+Event: 5.356 Thread 0x000001f7a8c38000 nmethod 1295 0x000001f795f50950 code [0x000001f795f50b80, 0x000001f795f518d0]
+Event: 5.356 Thread 0x000001f7a8c38000 1289       3       java.lang.Long::toString (129 bytes)
+Event: 5.356 Thread 0x000001f7a8c38000 nmethod 1289 0x000001f795f4fe10 code [0x000001f795f4ffc0, 0x000001f795f50620]
+Event: 5.356 Thread 0x000001f7a8c38000 1290       3       java.util.Formatter$FormatSpecifier::print (8 bytes)
+Event: 5.356 Thread 0x000001f7a8c38000 nmethod 1290 0x000001f795f4e550 code [0x000001f795f4e6c0, 0x000001f795f4e850]
+Event: 5.356 Thread 0x000001f7a8c38000 1291       3       java.util.Formatter$FormatSpecifier::print (168 bytes)
+Event: 5.356 Thread 0x000001f7a8c32000 nmethod 1255 0x000001f795f4d310 code [0x000001f795f4d4a0, 0x000001f795f4de78]
+Event: 5.357 Thread 0x000001f7a8c32000 1297       4       org.snu.ids.ha.ma.MCandidate::addAll (35 bytes)
+Event: 5.357 Thread 0x000001f7a8c38000 nmethod 1291 0x000001f795f6fb10 code [0x000001f795f6fde0, 0x000001f795f710f0]
+Event: 5.357 Thread 0x000001f7a8c38000 1292       3       java.lang.Double::compare (54 bytes)
+Event: 5.357 Thread 0x000001f7a8c38000 nmethod 1292 0x000001f795f4f650 code [0x000001f795f4f7e0, 0x000001f795f4fcf8]
+Event: 5.357 Thread 0x000001f7a8c38000 1293       3       java.lang.Double::isNaN (12 bytes)
+Event: 5.357 Thread 0x000001f7a8c38000 nmethod 1293 0x000001f795f4f2d0 code [0x000001f795f4f420, 0x000001f795f4f5d8]
+Event: 5.357 Thread 0x000001f7a8c38000 1299       3       java.lang.Double::isInfinite (22 bytes)
+Event: 5.357 Thread 0x000001f7a8c38000 nmethod 1299 0x000001f795f4ee90 code [0x000001f795f4f020, 0x000001f795f4f238]
+Event: 5.357 Thread 0x000001f7a8c38000 1300       3       java.util.Formatter$FormatSpecifier::print (946 bytes)
+Event: 5.360 Thread 0x000001f7a8c38000 nmethod 1300 0x000001f795f719d0 code [0x000001f795f72260, 0x000001f795f785f0]
+Event: 5.360 Thread 0x000001f7a8c38000 1307       3       java.lang.Integer::getChars (131 bytes)
+Event: 5.360 Thread 0x000001f7a8c38000 nmethod 1307 0x000001f795f7d0d0 code [0x000001f795f7d260, 0x000001f795f7d6d8]
+Event: 5.360 Thread 0x000001f7a8c38000 1312       3       org.snu.ids.ha.constants.Condition::getCondStr (82 bytes)
+Event: 5.361 Thread 0x000001f7a8c38000 nmethod 1312 0x000001f795f7db10 code [0x000001f795f7dd20, 0x000001f795f7eca0]
+Event: 5.361 Thread 0x000001f7a8c38000 1309       3       sun.misc.FormattedFloatingDecimal::applyPrecision (162 bytes)
+Event: 5.361 Thread 0x000001f7a8c32000 nmethod 1297 0x000001f795f82410 code [0x000001f795f82580, 0x000001f795f82bd8]
+Event: 5.361 Thread 0x000001f7a8c32000 1276       4       java.util.regex.Pattern$BitClass::isSatisfiedBy (22 bytes)
+Event: 5.361 Thread 0x000001f7a8c38000 nmethod 1309 0x000001f795f80d90 code [0x000001f795f80fe0, 0x000001f795f81bf0]
+Event: 5.361 Thread 0x000001f7a8c38000 1315       3       java.util.ArrayList::add (54 bytes)
+Event: 5.361 Thread 0x000001f7a8c32000 nmethod 1276 0x000001f795f171d0 code [0x000001f795f17300, 0x000001f795f173b8]
+Event: 5.361 Thread 0x000001f7a8c32000 1313       4       java.util.regex.Pattern$Branch::match (66 bytes)
+Event: 5.361 Thread 0x000001f7a8c38000 nmethod 1315 0x000001f795f83ad0 code [0x000001f795f83cc0, 0x000001f795f844c0]
+Event: 5.361 Thread 0x000001f7a8c38000 1316       3       java.util.ArrayList::rangeCheckForAdd (26 bytes)
+Event: 5.361 Thread 0x000001f7a8c38000 nmethod 1316 0x000001f795f7fad0 code [0x000001f795f7fce0, 0x000001f795f807e0]
+Event: 5.361 Thread 0x000001f7a8c38000 1318       3       java.lang.Integer::stringSize (21 bytes)
+Event: 5.362 Thread 0x000001f7a8c38000 nmethod 1318 0x000001f795f4e910 code [0x000001f795f4ea80, 0x000001f795f4ec98]
+Event: 5.362 Thread 0x000001f7a8c38000 1301       3       sun.misc.FormattedFloatingDecimal::valueOf (30 bytes)
+Event: 5.362 Thread 0x000001f7a8c38000 nmethod 1301 0x000001f795f7f610 code [0x000001f795f7f780, 0x000001f795f7fa00]
+Event: 5.362 Thread 0x000001f7a8c38000 1302       3       sun.misc.FormattedFloatingDecimal::<init> (289 bytes)
+Event: 5.362 Thread 0x000001f7a8c38000 nmethod 1302 0x000001f795f84890 code [0x000001f795f84b20, 0x000001f795f85a50]
+Event: 5.362 Thread 0x000001f7a8c38000 1303       3       sun.misc.FormattedFloatingDecimal::getBuffer (13 bytes)
+Event: 5.362 Thread 0x000001f7a8c38000 nmethod 1303 0x000001f795f835d0 code [0x000001f795f83740, 0x000001f795f83a30]
+Event: 5.362 Thread 0x000001f7a8c38000 1319       3       org.snu.ids.ha.constants.POSTag::getTagStr (80 bytes)
+Event: 5.362 Thread 0x000001f7a8c38000 nmethod 1319 0x000001f795f86050 code [0x000001f795f86240, 0x000001f795f87250]
+Event: 5.362 Thread 0x000001f7a8c38000 1305       3       java.util.Formatter$FormatSpecifier::printInteger (130 bytes)
+Event: 5.363 Thread 0x000001f7a8c38000 nmethod 1305 0x000001f795f88c10 code [0x000001f795f88e80, 0x000001f795f8a090]
+Event: 5.363 Thread 0x000001f7a8c38000 1321       1       org.snu.ids.ha.ma.MCandidate::getLnpr (10 bytes)
+Event: 5.363 Thread 0x000001f7a8c38000 nmethod 1321 0x000001f795f7f350 code [0x000001f795f7f4a0, 0x000001f795f7f5b8]
+Event: 5.363 Thread 0x000001f7a8c38000 1322       3       sun.misc.FloatingDecimal$BinaryToASCIIBuffer::dtoa (1509 bytes)
+Event: 5.363 Thread 0x000001f7a8c35000 nmethod 1254 0x000001f795f8cf50 code [0x000001f795f8d120, 0x000001f795f8e518]
+Event: 5.363 Thread 0x000001f7a8c35000 1317       4       java.util.Formatter$Flags::contains (22 bytes)
+Event: 5.363 Thread 0x000001f7a8c35000 nmethod 1317 0x000001f795f4d090 code [0x000001f795f4d1c0, 0x000001f795f4d258]
+Event: 5.363 Thread 0x000001f7a8c35000 1296       4       java.util.regex.Pattern$GroupHead::match (47 bytes)
+Event: 5.364 Thread 0x000001f7a8c35000 nmethod 1296 0x000001f795f83110 code [0x000001f795f83260, 0x000001f795f83398]
+Event: 5.364 Thread 0x000001f7a8c35000 1306       4       java.util.regex.Matcher::group (112 bytes)
+Event: 5.364 Thread 0x000001f7a8c38000 nmethod 1322 0x000001f795f8fb50 code [0x000001f795f8ff80, 0x000001f795f926c0]
+Event: 5.364 Thread 0x000001f7a8c38000 1324       1       sun.misc.FDBigInteger::size (10 bytes)
+Event: 5.364 Thread 0x000001f7a8c38000 nmethod 1324 0x000001f795f88950 code [0x000001f795f88aa0, 0x000001f795f88bb8]
+Event: 5.364 Thread 0x000001f7a8c38000 1327       1       org.snu.ids.ha.ma.MCandidate::getDicLenWithCand (10 bytes)
+Event: 5.365 Thread 0x000001f7a8c38000 nmethod 1327 0x000001f795f88690 code [0x000001f795f887e0, 0x000001f795f888f8]
+Event: 5.365 Thread 0x000001f7a8c38000 1328       3       sun.misc.FDBigInteger::multAndCarryBy10 (50 bytes)
+Event: 5.365 Thread 0x000001f7a8c38000 nmethod 1328 0x000001f795f880d0 code [0x000001f795f88240, 0x000001f795f884b8]
+Event: 5.365 Thread 0x000001f7a8c38000 1308       3       sun.misc.FloatingDecimal$BinaryToASCIIBuffer::getDigits (22 bytes)
+Event: 5.365 Thread 0x000001f7a8c38000 nmethod 1308 0x000001f795f87c90 code [0x000001f795f87e00, 0x000001f795f88030]
+Event: 5.365 Thread 0x000001f7a8c38000 1330       3       org.snu.ids.ha.constants.POSTag::getZipTagStr (140 bytes)
+Event: 5.365 Thread 0x000001f7a8c38000 nmethod 1330 0x000001f795f968d0 code [0x000001f795f96b60, 0x000001f795f98290]
+Event: 5.365 Thread 0x000001f7a8c38000 1310       3       sun.misc.FormattedFloatingDecimal::fillDecimal (352 bytes)
+Event: 5.365 Thread 0x000001f7a8c32000 nmethod 1313 0x000001f795f98b90 code [0x000001f795f98d40, 0x000001f795f996a8]
+Event: 5.365 Thread 0x000001f7a8c32000 1329       4       java.util.regex.Pattern$Curly::match0 (174 bytes)
+Event: 5.366 Thread 0x000001f7a8c38000 nmethod 1310 0x000001f795f8a510 code [0x000001f795f8a7e0, 0x000001f795f8c230]
+Event: 5.366 Thread 0x000001f7a8c38000 1311       3       sun.misc.FormattedFloatingDecimal::create (21 bytes)
+Event: 5.366 Thread 0x000001f7a8c38000 nmethod 1311 0x000001f795f87710 code [0x000001f795f87880, 0x000001f795f87b38]
+Event: 5.366 Thread 0x000001f7a8c38000 1286       3       java.lang.Byte::valueOf (14 bytes)
+Event: 5.366 Thread 0x000001f7a8c38000 nmethod 1286 0x000001f795f96510 code [0x000001f795f96660, 0x000001f795f967d8]
+Event: 5.366 Thread 0x000001f7a8c38000 1287       3       java.util.Formatter$FormatSpecifier::print (59 bytes)
+Event: 5.366 Thread 0x000001f7a8c38000 nmethod 1287 0x000001f795f96090 code [0x000001f795f96200, 0x000001f795f96470]
+Event: 5.366 Thread 0x000001f7a8c38000 1323       3       java.util.Arrays::rangeCheck (74 bytes)
+Event: 5.366 Thread 0x000001f7a8c38000 nmethod 1323 0x000001f795f94b90 code [0x000001f795f94de0, 0x000001f795f95ab0]
+Event: 5.366 Thread 0x000001f7a8c38000 1337       3       java.util.regex.Pattern::expr (142 bytes)
+Event: 5.367 Thread 0x000001f7a8c38000 nmethod 1337 0x000001f795f9a350 code [0x000001f795f9a580, 0x000001f795f9b1b0]
+Event: 5.367 Thread 0x000001f7a8c38000 1331       3       java.lang.String::valueOf (5 bytes)
+Event: 5.367 Thread 0x000001f7a8c38000 nmethod 1331 0x000001f795f947d0 code [0x000001f795f94940, 0x000001f795f94ab0]
+Event: 5.367 Thread 0x000001f7a8c38000 1332       3       java.lang.Integer::toString (48 bytes)
+Event: 5.367 Thread 0x000001f7a8c38000 nmethod 1332 0x000001f795f9b810 code [0x000001f795f9b9e0, 0x000001f795f9c030]
+Event: 5.367 Thread 0x000001f7a8c38000 1333       3       org.snu.ids.ha.ma.Morpheme::toString (76 bytes)
+Event: 5.367 Thread 0x000001f7a8c35000 nmethod 1306 0x000001f795f9f590 code [0x000001f795f9f720, 0x000001f795f9fcb8]
+Event: 5.367 Thread 0x000001f7a8c35000 1304       4       java.util.regex.Pattern$Ctype::isSatisfiedBy (24 bytes)
+Event: 5.367 Thread 0x000001f7a8c38000 nmethod 1333 0x000001f795f9d3d0 code [0x000001f795f9d680, 0x000001f795f9ecb0]
+Event: 5.367 Thread 0x000001f7a8c38000 1334       3       org.snu.ids.ha.ma.Morpheme::getTag (8 bytes)
+Event: 5.367 Thread 0x000001f7a8c38000 nmethod 1334 0x000001f795f9cb50 code [0x000001f795f9cd00, 0x000001f795f9d250]
+Event: 5.367 Thread 0x000001f7a8c35000 nmethod 1304 0x000001f795f9c810 code [0x000001f795f9c960, 0x000001f795f9ca38]
+Event: 5.368 Thread 0x000001f7a8c38000 1320       3       org.snu.ids.ha.ma.MCandidate::compareTo (9 bytes)
+Event: 5.368 Thread 0x000001f7a8c35000 1326       4       java.util.Locale::hashCode (41 bytes)
+Event: 5.368 Thread 0x000001f7a8c38000 nmethod 1320 0x000001f795fa2bd0 code [0x000001f795fa2d40, 0x000001f795fa2fb0]
+Event: 5.368 Thread 0x000001f7a8c38000 1336       3       java.util.Formatter$FormatSpecifier::print (59 bytes)
+Event: 5.368 Thread 0x000001f7a8c38000 nmethod 1336 0x000001f795fa1250 code [0x000001f795fa13c0, 0x000001f795fa1630]
+Event: 5.368 Thread 0x000001f7a8c38000 1314       1       org.snu.ids.ha.ma.MorphemeSpace::toString (3 bytes)
+Event: 5.368 Thread 0x000001f7a8c35000 nmethod 1326 0x000001f795f9c5d0 code [0x000001f795f9c700, 0x000001f795f9c778]
+Event: 5.368 Thread 0x000001f7a8c35000 1335       4       java.util.regex.Pattern$GroupTail::match (111 bytes)
+Event: 5.368 Thread 0x000001f7a8c38000 nmethod 1314 0x000001f795fa0f90 code [0x000001f795fa10e0, 0x000001f795fa11f8]
+Event: 5.368 Thread 0x000001f7a8c38000 1339       3       org.jpype.manager.TypeManager::createMethods (380 bytes)
+Event: 5.368 Thread 0x000001f7a8c38000 nmethod 1339 0x000001f795fa4810 code [0x000001f795fa4b80, 0x000001f795fa6ac0]
+Event: 5.368 Thread 0x000001f7a8c38000 1340       3       java.lang.Class::copyMethods (36 bytes)
+
+GC Heap History (90 events):
+Event: 0.211 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 76288K, used 5249K [0x00000000eab00000, 0x00000000f0000000, 0x0000000100000000)
+  eden space 65536K, 8% used [0x00000000eab00000,0x00000000eb0204c0,0x00000000eeb00000)
+  from space 10752K, 0% used [0x00000000ef580000,0x00000000ef580000,0x00000000f0000000)
+  to   space 10752K, 0% used [0x00000000eeb00000,0x00000000eeb00000,0x00000000ef580000)
+ ParOldGen       total 175104K, used 0K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000cab00000)
+ Metaspace       used 4394K, capacity 4738K, committed 4864K, reserved 1056768K
+  class space    used 446K, capacity 498K, committed 512K, reserved 1048576K
+Event: 0.212 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 76288K, used 1193K [0x00000000eab00000, 0x00000000f0000000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000eeb00000)
+  from space 10752K, 11% used [0x00000000eeb00000,0x00000000eec2a630,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000ef580000,0x00000000ef580000,0x00000000f0000000)
+ ParOldGen       total 175104K, used 8K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 0% used [0x00000000c0000000,0x00000000c0002000,0x00000000cab00000)
+ Metaspace       used 4394K, capacity 4738K, committed 4864K, reserved 1056768K
+  class space    used 446K, capacity 498K, committed 512K, reserved 1048576K
+}
+Event: 0.212 GC heap before
+{Heap before GC invocations=2 (full 1):
+ PSYoungGen      total 76288K, used 1193K [0x00000000eab00000, 0x00000000f0000000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000eeb00000)
+  from space 10752K, 11% used [0x00000000eeb00000,0x00000000eec2a630,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000ef580000,0x00000000ef580000,0x00000000f0000000)
+ ParOldGen       total 175104K, used 8K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 0% used [0x00000000c0000000,0x00000000c0002000,0x00000000cab00000)
+ Metaspace       used 4394K, capacity 4738K, committed 4864K, reserved 1056768K
+  class space    used 446K, capacity 498K, committed 512K, reserved 1048576K
+Event: 0.216 GC heap after
+Heap after GC invocations=2 (full 1):
+ PSYoungGen      total 76288K, used 0K [0x00000000eab00000, 0x00000000f0000000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000eeb00000)
+  from space 10752K, 0% used [0x00000000eeb00000,0x00000000eeb00000,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000ef580000,0x00000000ef580000,0x00000000f0000000)
+ ParOldGen       total 175104K, used 1036K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 0% used [0x00000000c0000000,0x00000000c0103170,0x00000000cab00000)
+ Metaspace       used 4394K, capacity 4738K, committed 4864K, reserved 1056768K
+  class space    used 446K, capacity 498K, committed 512K, reserved 1048576K
+}
+Event: 0.467 GC heap before
+{Heap before GC invocations=3 (full 1):
+ PSYoungGen      total 76288K, used 65536K [0x00000000eab00000, 0x00000000f0000000, 0x0000000100000000)
+  eden space 65536K, 100% used [0x00000000eab00000,0x00000000eeb00000,0x00000000eeb00000)
+  from space 10752K, 0% used [0x00000000eeb00000,0x00000000eeb00000,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000ef580000,0x00000000ef580000,0x00000000f0000000)
+ ParOldGen       total 175104K, used 1036K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 0% used [0x00000000c0000000,0x00000000c0103170,0x00000000cab00000)
+ Metaspace       used 5696K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.472 GC heap after
+Heap after GC invocations=3 (full 1):
+ PSYoungGen      total 76288K, used 10748K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000eeb00000)
+  from space 10752K, 99% used [0x00000000ef580000,0x00000000effff030,0x00000000f0000000)
+  to   space 10752K, 0% used [0x00000000eeb00000,0x00000000eeb00000,0x00000000ef580000)
+ ParOldGen       total 175104K, used 6462K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 3% used [0x00000000c0000000,0x00000000c064f848,0x00000000cab00000)
+ Metaspace       used 5696K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.496 GC heap before
+{Heap before GC invocations=4 (full 1):
+ PSYoungGen      total 76288K, used 33895K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 65536K, 35% used [0x00000000eab00000,0x00000000ec19ae08,0x00000000eeb00000)
+  from space 10752K, 99% used [0x00000000ef580000,0x00000000effff030,0x00000000f0000000)
+  to   space 10752K, 0% used [0x00000000eeb00000,0x00000000eeb00000,0x00000000ef580000)
+ ParOldGen       total 175104K, used 6462K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 3% used [0x00000000c0000000,0x00000000c064f848,0x00000000cab00000)
+ Metaspace       used 5710K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.500 GC heap after
+Heap after GC invocations=4 (full 1):
+ PSYoungGen      total 76288K, used 10741K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000eeb00000)
+  from space 10752K, 99% used [0x00000000eeb00000,0x00000000ef57d640,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000f3580000,0x00000000f3580000,0x00000000f4000000)
+ ParOldGen       total 175104K, used 9886K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 5% used [0x00000000c0000000,0x00000000c09a7858,0x00000000cab00000)
+ Metaspace       used 5710K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.500 GC heap before
+{Heap before GC invocations=5 (full 2):
+ PSYoungGen      total 76288K, used 10741K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000eeb00000)
+  from space 10752K, 99% used [0x00000000eeb00000,0x00000000ef57d640,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000f3580000,0x00000000f3580000,0x00000000f4000000)
+ ParOldGen       total 175104K, used 9886K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 5% used [0x00000000c0000000,0x00000000c09a7858,0x00000000cab00000)
+ Metaspace       used 5710K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.577 GC heap after
+Heap after GC invocations=5 (full 2):
+ PSYoungGen      total 76288K, used 0K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000eeb00000)
+  from space 10752K, 0% used [0x00000000eeb00000,0x00000000eeb00000,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000f3580000,0x00000000f3580000,0x00000000f4000000)
+ ParOldGen       total 175104K, used 19450K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 11% used [0x00000000c0000000,0x00000000c12fe9d8,0x00000000cab00000)
+ Metaspace       used 5710K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.598 GC heap before
+{Heap before GC invocations=6 (full 2):
+ PSYoungGen      total 76288K, used 3250K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 65536K, 4% used [0x00000000eab00000,0x00000000eae2cab8,0x00000000eeb00000)
+  from space 10752K, 0% used [0x00000000eeb00000,0x00000000eeb00000,0x00000000ef580000)
+  to   space 10752K, 0% used [0x00000000f3580000,0x00000000f3580000,0x00000000f4000000)
+ ParOldGen       total 175104K, used 19450K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 11% used [0x00000000c0000000,0x00000000c12fe9d8,0x00000000cab00000)
+ Metaspace       used 5711K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.599 GC heap after
+Heap after GC invocations=6 (full 2):
+ PSYoungGen      total 141824K, used 320K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f2b00000)
+  from space 10752K, 2% used [0x00000000f3580000,0x00000000f35d0000,0x00000000f4000000)
+  to   space 10752K, 0% used [0x00000000f2b00000,0x00000000f2b00000,0x00000000f3580000)
+ ParOldGen       total 175104K, used 19450K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 11% used [0x00000000c0000000,0x00000000c12fe9d8,0x00000000cab00000)
+ Metaspace       used 5711K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.599 GC heap before
+{Heap before GC invocations=7 (full 3):
+ PSYoungGen      total 141824K, used 320K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f2b00000)
+  from space 10752K, 2% used [0x00000000f3580000,0x00000000f35d0000,0x00000000f4000000)
+  to   space 10752K, 0% used [0x00000000f2b00000,0x00000000f2b00000,0x00000000f3580000)
+ ParOldGen       total 175104K, used 19450K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 11% used [0x00000000c0000000,0x00000000c12fe9d8,0x00000000cab00000)
+ Metaspace       used 5711K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.645 GC heap after
+Heap after GC invocations=7 (full 3):
+ PSYoungGen      total 141824K, used 0K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f2b00000)
+  from space 10752K, 0% used [0x00000000f3580000,0x00000000f3580000,0x00000000f4000000)
+  to   space 10752K, 0% used [0x00000000f2b00000,0x00000000f2b00000,0x00000000f3580000)
+ ParOldGen       total 175104K, used 19569K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 11% used [0x00000000c0000000,0x00000000c131c450,0x00000000cab00000)
+ Metaspace       used 5711K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.849 GC heap before
+{Heap before GC invocations=8 (full 3):
+ PSYoungGen      total 141824K, used 131072K [0x00000000eab00000, 0x00000000f4000000, 0x0000000100000000)
+  eden space 131072K, 100% used [0x00000000eab00000,0x00000000f2b00000,0x00000000f2b00000)
+  from space 10752K, 0% used [0x00000000f3580000,0x00000000f3580000,0x00000000f4000000)
+  to   space 10752K, 0% used [0x00000000f2b00000,0x00000000f2b00000,0x00000000f3580000)
+ ParOldGen       total 175104K, used 19569K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 11% used [0x00000000c0000000,0x00000000c131c450,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.859 GC heap after
+Heap after GC invocations=8 (full 3):
+ PSYoungGen      total 141824K, used 10743K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f2b00000)
+  from space 10752K, 99% used [0x00000000f2b00000,0x00000000f357deb0,0x00000000f3580000)
+  to   space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+ ParOldGen       total 175104K, used 27385K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 15% used [0x00000000c0000000,0x00000000c1abe460,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.881 GC heap before
+{Heap before GC invocations=9 (full 3):
+ PSYoungGen      total 141824K, used 29578K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 131072K, 14% used [0x00000000eab00000,0x00000000ebd64c68,0x00000000f2b00000)
+  from space 10752K, 99% used [0x00000000f2b00000,0x00000000f357deb0,0x00000000f3580000)
+  to   space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+ ParOldGen       total 175104K, used 27385K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 15% used [0x00000000c0000000,0x00000000c1abe460,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.887 GC heap after
+Heap after GC invocations=9 (full 3):
+ PSYoungGen      total 272896K, used 10727K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 99% used [0x00000000fb580000,0x00000000fbff9ec0,0x00000000fc000000)
+  to   space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+ ParOldGen       total 175104K, used 29417K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 16% used [0x00000000c0000000,0x00000000c1cba460,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.887 GC heap before
+{Heap before GC invocations=10 (full 4):
+ PSYoungGen      total 272896K, used 10727K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 99% used [0x00000000fb580000,0x00000000fbff9ec0,0x00000000fc000000)
+  to   space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+ ParOldGen       total 175104K, used 29417K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 16% used [0x00000000c0000000,0x00000000c1cba460,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.960 GC heap after
+Heap after GC invocations=10 (full 4):
+ PSYoungGen      total 272896K, used 0K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+  to   space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+ ParOldGen       total 175104K, used 39455K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 22% used [0x00000000c0000000,0x00000000c2687e70,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.982 GC heap before
+{Heap before GC invocations=11 (full 4):
+ PSYoungGen      total 272896K, used 22255K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 8% used [0x00000000eab00000,0x00000000ec0bbf68,0x00000000fab00000)
+  from space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+  to   space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+ ParOldGen       total 175104K, used 39455K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 22% used [0x00000000c0000000,0x00000000c2687e70,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 0.984 GC heap after
+Heap after GC invocations=11 (full 4):
+ PSYoungGen      total 272896K, used 2016K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 18% used [0x00000000fab00000,0x00000000facf8000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+ ParOldGen       total 175104K, used 39455K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 22% used [0x00000000c0000000,0x00000000c2687e70,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 0.984 GC heap before
+{Heap before GC invocations=12 (full 5):
+ PSYoungGen      total 272896K, used 2016K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 18% used [0x00000000fab00000,0x00000000facf8000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+ ParOldGen       total 175104K, used 39455K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 22% used [0x00000000c0000000,0x00000000c2687e70,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 1.022 GC heap after
+Heap after GC invocations=12 (full 5):
+ PSYoungGen      total 272896K, used 0K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+ ParOldGen       total 175104K, used 41329K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 23% used [0x00000000c0000000,0x00000000c285c7e8,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 1.407 GC heap before
+{Heap before GC invocations=13 (full 5):
+ PSYoungGen      total 272896K, used 262144K [0x00000000eab00000, 0x00000000fc000000, 0x0000000100000000)
+  eden space 262144K, 100% used [0x00000000eab00000,0x00000000fab00000,0x00000000fab00000)
+  from space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000fb580000,0x00000000fb580000,0x00000000fc000000)
+ ParOldGen       total 175104K, used 41329K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 23% used [0x00000000c0000000,0x00000000c285c7e8,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 1.443 GC heap after
+Heap after GC invocations=13 (full 5):
+ PSYoungGen      total 272896K, used 10752K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 100% used [0x00000000fb580000,0x00000000fc000000,0x00000000fc000000)
+  to   space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+ ParOldGen       total 175104K, used 61929K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 35% used [0x00000000c0000000,0x00000000c3c7a7e8,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 1.466 GC heap before
+{Heap before GC invocations=14 (full 5):
+ PSYoungGen      total 272896K, used 32510K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 262144K, 8% used [0x00000000eab00000,0x00000000ec03fad8,0x00000000fab00000)
+  from space 10752K, 100% used [0x00000000fb580000,0x00000000fc000000,0x00000000fc000000)
+  to   space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+ ParOldGen       total 175104K, used 61929K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 35% used [0x00000000c0000000,0x00000000c3c7a7e8,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 1.481 GC heap after
+Heap after GC invocations=14 (full 5):
+ PSYoungGen      total 272896K, used 10752K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 100% used [0x00000000fab00000,0x00000000fb580000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 63977K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 36% used [0x00000000c0000000,0x00000000c3e7a7e8,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 1.481 GC heap before
+{Heap before GC invocations=15 (full 6):
+ PSYoungGen      total 272896K, used 10752K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 100% used [0x00000000fab00000,0x00000000fb580000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 63977K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 36% used [0x00000000c0000000,0x00000000c3e7a7e8,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 1.636 GC heap after
+Heap after GC invocations=15 (full 6):
+ PSYoungGen      total 272896K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 262144K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fab00000)
+  from space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 74554K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 42% used [0x00000000c0000000,0x00000000c48cea90,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 1.657 GC heap before
+{Heap before GC invocations=16 (full 6):
+ PSYoungGen      total 272896K, used 16595K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 262144K, 6% used [0x00000000eab00000,0x00000000ebb34f70,0x00000000fab00000)
+  from space 10752K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fb580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 74554K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 42% used [0x00000000c0000000,0x00000000c48cea90,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 1.660 GC heap after
+Heap after GC invocations=16 (full 6):
+ PSYoungGen      total 338432K, used 1984K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 18% used [0x00000000ff580000,0x00000000ff770000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 74554K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 42% used [0x00000000c0000000,0x00000000c48cea90,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 1.660 GC heap before
+{Heap before GC invocations=17 (full 7):
+ PSYoungGen      total 338432K, used 1984K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 18% used [0x00000000ff580000,0x00000000ff770000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 74554K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 42% used [0x00000000c0000000,0x00000000c48cea90,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+Event: 1.728 GC heap after
+Heap after GC invocations=17 (full 7):
+ PSYoungGen      total 338432K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 76347K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 43% used [0x00000000c0000000,0x00000000c4a8ed98,0x00000000cab00000)
+ Metaspace       used 5720K, capacity 5918K, committed 6144K, reserved 1056768K
+  class space    used 570K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.253 GC heap before
+{Heap before GC invocations=18 (full 7):
+ PSYoungGen      total 338432K, used 327680K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 100% used [0x00000000eab00000,0x00000000feb00000,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 76347K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 43% used [0x00000000c0000000,0x00000000c4a8ed98,0x00000000cab00000)
+ Metaspace       used 5879K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.280 GC heap after
+Heap after GC invocations=18 (full 7):
+ PSYoungGen      total 338432K, used 10750K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 99% used [0x00000000feb00000,0x00000000ff57fa28,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 112637K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 64% used [0x00000000c0000000,0x00000000c6dff748,0x00000000cab00000)
+ Metaspace       used 5879K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.308 GC heap before
+{Heap before GC invocations=19 (full 7):
+ PSYoungGen      total 338432K, used 50581K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 12% used [0x00000000eab00000,0x00000000ed1e5c00,0x00000000feb00000)
+  from space 10752K, 99% used [0x00000000feb00000,0x00000000ff57fa28,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 112637K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 64% used [0x00000000c0000000,0x00000000c6dff748,0x00000000cab00000)
+ Metaspace       used 5882K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.315 GC heap after
+Heap after GC invocations=19 (full 7):
+ PSYoungGen      total 338432K, used 10750K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 99% used [0x00000000ff580000,0x00000000fffffa28,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 116749K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 66% used [0x00000000c0000000,0x00000000c7203748,0x00000000cab00000)
+ Metaspace       used 5882K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.315 GC heap before
+{Heap before GC invocations=20 (full 8):
+ PSYoungGen      total 338432K, used 10750K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 99% used [0x00000000ff580000,0x00000000fffffa28,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 116749K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 66% used [0x00000000c0000000,0x00000000c7203748,0x00000000cab00000)
+ Metaspace       used 5882K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.503 GC heap after
+Heap after GC invocations=20 (full 8):
+ PSYoungGen      total 338432K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 125189K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 71% used [0x00000000c0000000,0x00000000c7a41518,0x00000000cab00000)
+ Metaspace       used 5882K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.529 GC heap before
+{Heap before GC invocations=21 (full 8):
+ PSYoungGen      total 338432K, used 39830K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 12% used [0x00000000eab00000,0x00000000ed1e5b48,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 125189K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 71% used [0x00000000c0000000,0x00000000c7a41518,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.533 GC heap after
+Heap after GC invocations=21 (full 8):
+ PSYoungGen      total 338432K, used 4736K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 44% used [0x00000000feb00000,0x00000000fefa0000,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 125189K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 71% used [0x00000000c0000000,0x00000000c7a41518,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.533 GC heap before
+{Heap before GC invocations=22 (full 9):
+ PSYoungGen      total 338432K, used 4736K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 44% used [0x00000000feb00000,0x00000000fefa0000,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 125189K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 71% used [0x00000000c0000000,0x00000000c7a41518,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.685 GC heap after
+Heap after GC invocations=22 (full 9):
+ PSYoungGen      total 338432K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 129754K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 74% used [0x00000000c0000000,0x00000000c7eb6a80,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.711 GC heap before
+{Heap before GC invocations=23 (full 9):
+ PSYoungGen      total 338432K, used 46319K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 14% used [0x00000000eab00000,0x00000000ed83bd40,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 129754K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 74% used [0x00000000c0000000,0x00000000c7eb6a80,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.714 GC heap after
+Heap after GC invocations=23 (full 9):
+ PSYoungGen      total 338432K, used 5120K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 47% used [0x00000000ff580000,0x00000000ffa80000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 129754K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 74% used [0x00000000c0000000,0x00000000c7eb6a80,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.714 GC heap before
+{Heap before GC invocations=24 (full 10):
+ PSYoungGen      total 338432K, used 5120K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 47% used [0x00000000ff580000,0x00000000ffa80000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 129754K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 74% used [0x00000000c0000000,0x00000000c7eb6a80,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.821 GC heap after
+Heap after GC invocations=24 (full 10):
+ PSYoungGen      total 338432K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 134717K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 76% used [0x00000000c0000000,0x00000000c838f520,0x00000000cab00000)
+ Metaspace       used 5884K, capacity 6110K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.972 GC heap before
+{Heap before GC invocations=25 (full 10):
+ PSYoungGen      total 338432K, used 327680K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 100% used [0x00000000eab00000,0x00000000feb00000,0x00000000feb00000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 10752K, 0% used [0x00000000feb00000,0x00000000feb00000,0x00000000ff580000)
+ ParOldGen       total 175104K, used 134717K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 76% used [0x00000000c0000000,0x00000000c838f520,0x00000000cab00000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 2.996 GC heap after
+Heap after GC invocations=25 (full 10):
+ PSYoungGen      total 338432K, used 10752K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 100% used [0x00000000feb00000,0x00000000ff580000,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 167317K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 95% used [0x00000000c0000000,0x00000000ca365520,0x00000000cab00000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 2.996 GC heap before
+{Heap before GC invocations=26 (full 11):
+ PSYoungGen      total 338432K, used 10752K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 100% used [0x00000000feb00000,0x00000000ff580000,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 175104K, used 167317K [0x00000000c0000000, 0x00000000cab00000, 0x00000000eab00000)
+  object space 175104K, 95% used [0x00000000c0000000,0x00000000ca365520,0x00000000cab00000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.194 GC heap after
+Heap after GC invocations=26 (full 11):
+ PSYoungGen      total 338432K, used 3068K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000feb00000)
+  from space 10752K, 28% used [0x00000000feb00000,0x00000000fedff0d8,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 331264K, used 174799K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 52% used [0x00000000c0000000,0x00000000caab3ff0,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.218 GC heap before
+{Heap before GC invocations=27 (full 11):
+ PSYoungGen      total 338432K, used 62198K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 327680K, 18% used [0x00000000eab00000,0x00000000ee4be7e0,0x00000000feb00000)
+  from space 10752K, 28% used [0x00000000feb00000,0x00000000fedff0d8,0x00000000ff580000)
+  to   space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+ ParOldGen       total 331264K, used 174799K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 52% used [0x00000000c0000000,0x00000000caab3ff0,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.234 GC heap after
+Heap after GC invocations=27 (full 11):
+ PSYoungGen      total 270848K, used 10368K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa900000)
+  from space 10752K, 96% used [0x00000000ff580000,0x00000000fffa0000,0x0000000100000000)
+  to   space 44544K, 0% used [0x00000000fa900000,0x00000000fa900000,0x00000000fd480000)
+ ParOldGen       total 331264K, used 174799K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 52% used [0x00000000c0000000,0x00000000caab3ff0,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.234 GC heap before
+{Heap before GC invocations=28 (full 12):
+ PSYoungGen      total 270848K, used 10368K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa900000)
+  from space 10752K, 96% used [0x00000000ff580000,0x00000000fffa0000,0x0000000100000000)
+  to   space 44544K, 0% used [0x00000000fa900000,0x00000000fa900000,0x00000000fd480000)
+ ParOldGen       total 331264K, used 174799K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 52% used [0x00000000c0000000,0x00000000caab3ff0,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.345 GC heap after
+Heap after GC invocations=28 (full 12):
+ PSYoungGen      total 270848K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa900000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 44544K, 0% used [0x00000000fa900000,0x00000000fa900000,0x00000000fd480000)
+ ParOldGen       total 331264K, used 185020K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 55% used [0x00000000c0000000,0x00000000cb4af280,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.374 GC heap before
+{Heap before GC invocations=29 (full 12):
+ PSYoungGen      total 270848K, used 62424K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 24% used [0x00000000eab00000,0x00000000ee7f6300,0x00000000fa900000)
+  from space 10752K, 0% used [0x00000000ff580000,0x00000000ff580000,0x0000000100000000)
+  to   space 44544K, 0% used [0x00000000fa900000,0x00000000fa900000,0x00000000fd480000)
+ ParOldGen       total 331264K, used 185020K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 55% used [0x00000000c0000000,0x00000000cb4af280,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.379 GC heap after
+Heap after GC invocations=29 (full 12):
+ PSYoungGen      total 304640K, used 7968K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa900000)
+  from space 44544K, 17% used [0x00000000fa900000,0x00000000fb0c8000,0x00000000fd480000)
+  to   space 43008K, 0% used [0x00000000fd600000,0x00000000fd600000,0x0000000100000000)
+ ParOldGen       total 331264K, used 185020K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 55% used [0x00000000c0000000,0x00000000cb4af280,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.379 GC heap before
+{Heap before GC invocations=30 (full 13):
+ PSYoungGen      total 304640K, used 7968K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa900000)
+  from space 44544K, 17% used [0x00000000fa900000,0x00000000fb0c8000,0x00000000fd480000)
+  to   space 43008K, 0% used [0x00000000fd600000,0x00000000fd600000,0x0000000100000000)
+ ParOldGen       total 331264K, used 185020K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 55% used [0x00000000c0000000,0x00000000cb4af280,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.487 GC heap after
+Heap after GC invocations=30 (full 13):
+ PSYoungGen      total 304640K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa900000)
+  from space 44544K, 0% used [0x00000000fa900000,0x00000000fa900000,0x00000000fd480000)
+  to   space 43008K, 0% used [0x00000000fd600000,0x00000000fd600000,0x0000000100000000)
+ ParOldGen       total 331264K, used 192814K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 58% used [0x00000000c0000000,0x00000000cbc4b9b8,0x00000000d4380000)
+ Metaspace       used 5920K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.513 GC heap before
+{Heap before GC invocations=31 (full 13):
+ PSYoungGen      total 304640K, used 36608K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 260096K, 14% used [0x00000000eab00000,0x00000000ecec0098,0x00000000fa900000)
+  from space 44544K, 0% used [0x00000000fa900000,0x00000000fa900000,0x00000000fd480000)
+  to   space 43008K, 0% used [0x00000000fd600000,0x00000000fd600000,0x0000000100000000)
+ ParOldGen       total 331264K, used 192814K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 58% used [0x00000000c0000000,0x00000000cbc4b9b8,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.515 GC heap after
+Heap after GC invocations=31 (full 13):
+ PSYoungGen      total 307200K, used 3552K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fad00000)
+  from space 43008K, 8% used [0x00000000fd600000,0x00000000fd978000,0x0000000100000000)
+  to   space 41984K, 0% used [0x00000000fad00000,0x00000000fad00000,0x00000000fd600000)
+ ParOldGen       total 331264K, used 192814K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 58% used [0x00000000c0000000,0x00000000cbc4b9b8,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.515 GC heap before
+{Heap before GC invocations=32 (full 14):
+ PSYoungGen      total 307200K, used 3552K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fad00000)
+  from space 43008K, 8% used [0x00000000fd600000,0x00000000fd978000,0x0000000100000000)
+  to   space 41984K, 0% used [0x00000000fad00000,0x00000000fad00000,0x00000000fd600000)
+ ParOldGen       total 331264K, used 192814K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 58% used [0x00000000c0000000,0x00000000cbc4b9b8,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.721 GC heap after
+Heap after GC invocations=32 (full 14):
+ PSYoungGen      total 307200K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fad00000)
+  from space 43008K, 0% used [0x00000000fd600000,0x00000000fd600000,0x0000000100000000)
+  to   space 41984K, 0% used [0x00000000fad00000,0x00000000fad00000,0x00000000fd600000)
+ ParOldGen       total 331264K, used 196219K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 59% used [0x00000000c0000000,0x00000000cbf9ed70,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.751 GC heap before
+{Heap before GC invocations=33 (full 14):
+ PSYoungGen      total 307200K, used 52918K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 20% used [0x00000000eab00000,0x00000000edead988,0x00000000fad00000)
+  from space 43008K, 0% used [0x00000000fd600000,0x00000000fd600000,0x0000000100000000)
+  to   space 41984K, 0% used [0x00000000fad00000,0x00000000fad00000,0x00000000fd600000)
+ ParOldGen       total 331264K, used 196219K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 59% used [0x00000000c0000000,0x00000000cbf9ed70,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.755 GC heap after
+Heap after GC invocations=33 (full 14):
+ PSYoungGen      total 306176K, used 4864K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fad00000)
+  from space 41984K, 11% used [0x00000000fad00000,0x00000000fb1c0010,0x00000000fd600000)
+  to   space 40448K, 0% used [0x00000000fd880000,0x00000000fd880000,0x0000000100000000)
+ ParOldGen       total 331264K, used 196219K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 59% used [0x00000000c0000000,0x00000000cbf9ed70,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 3.755 GC heap before
+{Heap before GC invocations=34 (full 15):
+ PSYoungGen      total 306176K, used 4864K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fad00000)
+  from space 41984K, 11% used [0x00000000fad00000,0x00000000fb1c0010,0x00000000fd600000)
+  to   space 40448K, 0% used [0x00000000fd880000,0x00000000fd880000,0x0000000100000000)
+ ParOldGen       total 331264K, used 196219K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 59% used [0x00000000c0000000,0x00000000cbf9ed70,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 3.871 GC heap after
+Heap after GC invocations=34 (full 15):
+ PSYoungGen      total 306176K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fad00000)
+  from space 41984K, 0% used [0x00000000fad00000,0x00000000fad00000,0x00000000fd600000)
+  to   space 40448K, 0% used [0x00000000fd880000,0x00000000fd880000,0x0000000100000000)
+ ParOldGen       total 331264K, used 200927K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 60% used [0x00000000c0000000,0x00000000cc437db0,0x00000000d4380000)
+ Metaspace       used 5922K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.037 GC heap before
+{Heap before GC invocations=35 (full 15):
+ PSYoungGen      total 306176K, used 264192K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 264192K, 100% used [0x00000000eab00000,0x00000000fad00000,0x00000000fad00000)
+  from space 41984K, 0% used [0x00000000fad00000,0x00000000fad00000,0x00000000fd600000)
+  to   space 40448K, 0% used [0x00000000fd880000,0x00000000fd880000,0x0000000100000000)
+ ParOldGen       total 331264K, used 200927K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 60% used [0x00000000c0000000,0x00000000cc437db0,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 4.058 GC heap after
+Heap after GC invocations=35 (full 15):
+ PSYoungGen      total 299520K, used 31760K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 259072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa800000)
+  from space 40448K, 78% used [0x00000000fd880000,0x00000000ff784020,0x0000000100000000)
+  to   space 45056K, 0% used [0x00000000fa800000,0x00000000fa800000,0x00000000fd400000)
+ ParOldGen       total 331264K, used 200927K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 60% used [0x00000000c0000000,0x00000000cc437db0,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.091 GC heap before
+{Heap before GC invocations=36 (full 15):
+ PSYoungGen      total 299520K, used 99095K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 259072K, 25% used [0x00000000eab00000,0x00000000eecc1dd0,0x00000000fa800000)
+  from space 40448K, 78% used [0x00000000fd880000,0x00000000ff784020,0x0000000100000000)
+  to   space 45056K, 0% used [0x00000000fa800000,0x00000000fa800000,0x00000000fd400000)
+ ParOldGen       total 331264K, used 200927K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 60% used [0x00000000c0000000,0x00000000cc437db0,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 4.111 GC heap after
+Heap after GC invocations=36 (full 15):
+ PSYoungGen      total 299008K, used 39792K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 259072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa800000)
+  from space 39936K, 99% used [0x00000000fa800000,0x00000000fcedc020,0x00000000fcf00000)
+  to   space 50176K, 0% used [0x00000000fcf00000,0x00000000fcf00000,0x0000000100000000)
+ ParOldGen       total 331264K, used 200927K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 60% used [0x00000000c0000000,0x00000000cc437db0,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.111 GC heap before
+{Heap before GC invocations=37 (full 16):
+ PSYoungGen      total 299008K, used 39792K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 259072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa800000)
+  from space 39936K, 99% used [0x00000000fa800000,0x00000000fcedc020,0x00000000fcf00000)
+  to   space 50176K, 0% used [0x00000000fcf00000,0x00000000fcf00000,0x0000000100000000)
+ ParOldGen       total 331264K, used 200927K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 60% used [0x00000000c0000000,0x00000000cc437db0,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 4.366 GC heap after
+Heap after GC invocations=37 (full 16):
+ PSYoungGen      total 299008K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 259072K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000fa800000)
+  from space 39936K, 0% used [0x00000000fa800000,0x00000000fa800000,0x00000000fcf00000)
+  to   space 50176K, 0% used [0x00000000fcf00000,0x00000000fcf00000,0x0000000100000000)
+ ParOldGen       total 331264K, used 240467K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 72% used [0x00000000c0000000,0x00000000cead4c10,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.396 GC heap before
+{Heap before GC invocations=38 (full 16):
+ PSYoungGen      total 299008K, used 67335K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 259072K, 25% used [0x00000000eab00000,0x00000000eecc1c40,0x00000000fa800000)
+  from space 39936K, 0% used [0x00000000fa800000,0x00000000fa800000,0x00000000fcf00000)
+  to   space 50176K, 0% used [0x00000000fcf00000,0x00000000fcf00000,0x0000000100000000)
+ ParOldGen       total 331264K, used 240467K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 72% used [0x00000000c0000000,0x00000000cead4c10,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 4.402 GC heap after
+Heap after GC invocations=38 (full 16):
+ PSYoungGen      total 300032K, used 8416K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 249856K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9f00000)
+  from space 50176K, 16% used [0x00000000fcf00000,0x00000000fd738000,0x0000000100000000)
+  to   space 49152K, 0% used [0x00000000f9f00000,0x00000000f9f00000,0x00000000fcf00000)
+ ParOldGen       total 331264K, used 240467K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 72% used [0x00000000c0000000,0x00000000cead4c10,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.402 GC heap before
+{Heap before GC invocations=39 (full 17):
+ PSYoungGen      total 300032K, used 8416K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 249856K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9f00000)
+  from space 50176K, 16% used [0x00000000fcf00000,0x00000000fd738000,0x0000000100000000)
+  to   space 49152K, 0% used [0x00000000f9f00000,0x00000000f9f00000,0x00000000fcf00000)
+ ParOldGen       total 331264K, used 240467K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 72% used [0x00000000c0000000,0x00000000cead4c10,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 4.646 GC heap after
+Heap after GC invocations=39 (full 17):
+ PSYoungGen      total 300032K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 249856K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9f00000)
+  from space 50176K, 0% used [0x00000000fcf00000,0x00000000fcf00000,0x0000000100000000)
+  to   space 49152K, 0% used [0x00000000f9f00000,0x00000000f9f00000,0x00000000fcf00000)
+ ParOldGen       total 331264K, used 248686K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 75% used [0x00000000c0000000,0x00000000cf2dba80,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.754 GC heap before
+{Heap before GC invocations=40 (full 17):
+ PSYoungGen      total 300032K, used 249856K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 249856K, 100% used [0x00000000eab00000,0x00000000f9f00000,0x00000000f9f00000)
+  from space 50176K, 0% used [0x00000000fcf00000,0x00000000fcf00000,0x0000000100000000)
+  to   space 49152K, 0% used [0x00000000f9f00000,0x00000000f9f00000,0x00000000fcf00000)
+ ParOldGen       total 331264K, used 248686K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 75% used [0x00000000c0000000,0x00000000cf2dba80,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 4.772 GC heap after
+Heap after GC invocations=40 (full 17):
+ PSYoungGen      total 283136K, used 33024K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 249856K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9f00000)
+  from space 33280K, 99% used [0x00000000f9f00000,0x00000000fbf40010,0x00000000fbf80000)
+  to   space 52224K, 0% used [0x00000000fcd00000,0x00000000fcd00000,0x0000000100000000)
+ ParOldGen       total 331264K, used 248686K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 75% used [0x00000000c0000000,0x00000000cf2dba80,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.806 GC heap before
+{Heap before GC invocations=41 (full 17):
+ PSYoungGen      total 283136K, used 102925K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 249856K, 27% used [0x00000000eab00000,0x00000000eef43528,0x00000000f9f00000)
+  from space 33280K, 99% used [0x00000000f9f00000,0x00000000fbf40010,0x00000000fbf80000)
+  to   space 52224K, 0% used [0x00000000fcd00000,0x00000000fcd00000,0x0000000100000000)
+ ParOldGen       total 331264K, used 248686K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 75% used [0x00000000c0000000,0x00000000cf2dba80,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 4.832 GC heap after
+Heap after GC invocations=41 (full 17):
+ PSYoungGen      total 285696K, used 41984K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f8f00000)
+  from space 52224K, 80% used [0x00000000fcd00000,0x00000000ff600010,0x0000000100000000)
+  to   space 57856K, 0% used [0x00000000f8f00000,0x00000000f8f00000,0x00000000fc780000)
+ ParOldGen       total 331264K, used 248686K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 75% used [0x00000000c0000000,0x00000000cf2dba80,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 4.832 GC heap before
+{Heap before GC invocations=42 (full 18):
+ PSYoungGen      total 285696K, used 41984K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f8f00000)
+  from space 52224K, 80% used [0x00000000fcd00000,0x00000000ff600010,0x0000000100000000)
+  to   space 57856K, 0% used [0x00000000f8f00000,0x00000000f8f00000,0x00000000fc780000)
+ ParOldGen       total 331264K, used 248686K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 75% used [0x00000000c0000000,0x00000000cf2dba80,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 5.005 GC heap after
+Heap after GC invocations=42 (full 18):
+ PSYoungGen      total 285696K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f8f00000)
+  from space 52224K, 0% used [0x00000000fcd00000,0x00000000fcd00000,0x0000000100000000)
+  to   space 57856K, 0% used [0x00000000f8f00000,0x00000000f8f00000,0x00000000fc780000)
+ ParOldGen       total 331264K, used 290397K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 87% used [0x00000000c0000000,0x00000000d1b97650,0x00000000d4380000)
+ Metaspace       used 5931K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 5.030 GC heap before
+{Heap before GC invocations=43 (full 18):
+ PSYoungGen      total 285696K, used 60664K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 25% used [0x00000000eab00000,0x00000000ee63e278,0x00000000f8f00000)
+  from space 52224K, 0% used [0x00000000fcd00000,0x00000000fcd00000,0x0000000100000000)
+  to   space 57856K, 0% used [0x00000000f8f00000,0x00000000f8f00000,0x00000000fc780000)
+ ParOldGen       total 331264K, used 290397K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 87% used [0x00000000c0000000,0x00000000d1b97650,0x00000000d4380000)
+ Metaspace       used 5933K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 5.034 GC heap after
+Heap after GC invocations=43 (full 18):
+ PSYoungGen      total 291328K, used 7584K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f8f00000)
+  from space 57856K, 13% used [0x00000000f8f00000,0x00000000f9668000,0x00000000fc780000)
+  to   space 56320K, 0% used [0x00000000fc900000,0x00000000fc900000,0x0000000100000000)
+ ParOldGen       total 331264K, used 290397K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 87% used [0x00000000c0000000,0x00000000d1b97650,0x00000000d4380000)
+ Metaspace       used 5933K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 5.034 GC heap before
+{Heap before GC invocations=44 (full 19):
+ PSYoungGen      total 291328K, used 7584K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f8f00000)
+  from space 57856K, 13% used [0x00000000f8f00000,0x00000000f9668000,0x00000000fc780000)
+  to   space 56320K, 0% used [0x00000000fc900000,0x00000000fc900000,0x0000000100000000)
+ ParOldGen       total 331264K, used 290397K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 87% used [0x00000000c0000000,0x00000000d1b97650,0x00000000d4380000)
+ Metaspace       used 5933K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 5.166 GC heap after
+Heap after GC invocations=44 (full 19):
+ PSYoungGen      total 291328K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f8f00000)
+  from space 57856K, 0% used [0x00000000f8f00000,0x00000000f8f00000,0x00000000fc780000)
+  to   space 56320K, 0% used [0x00000000fc900000,0x00000000fc900000,0x0000000100000000)
+ ParOldGen       total 331264K, used 297794K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 89% used [0x00000000c0000000,0x00000000d22d09f8,0x00000000d4380000)
+ Metaspace       used 5933K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+Event: 5.264 GC heap before
+{Heap before GC invocations=45 (full 19):
+ PSYoungGen      total 291328K, used 233472K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 233472K, 100% used [0x00000000eab00000,0x00000000f8f00000,0x00000000f8f00000)
+  from space 57856K, 0% used [0x00000000f8f00000,0x00000000f8f00000,0x00000000fc780000)
+  to   space 56320K, 0% used [0x00000000fc900000,0x00000000fc900000,0x0000000100000000)
+ ParOldGen       total 331264K, used 297794K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 89% used [0x00000000c0000000,0x00000000d22d09f8,0x00000000d4380000)
+ Metaspace       used 5933K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+Event: 5.281 GC heap after
+Heap after GC invocations=45 (full 19):
+ PSYoungGen      total 289792K, used 29344K [0x00000000eab00000, 0x00000000ffe80000, 0x0000000100000000)
+  eden space 235008K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9080000)
+  from space 54784K, 53% used [0x00000000fc900000,0x00000000fe5a8010,0x00000000ffe80000)
+  to   space 56320K, 0% used [0x00000000f9080000,0x00000000f9080000,0x00000000fc780000)
+ ParOldGen       total 331264K, used 297794K [0x00000000c0000000, 0x00000000d4380000, 0x00000000eab00000)
+  object space 331264K, 89% used [0x00000000c0000000,0x00000000d22d09f8,0x00000000d4380000)
+ Metaspace       used 5933K, capacity 6174K, committed 6400K, reserved 1056768K
+  class space    used 576K, capacity 673K, committed 768K, reserved 1048576K
+}
+
+Deoptimization events (162 events):
+Event: 0.268 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795a3df88 method=java.net.URI.match(CJJ)Z @ 19
+Event: 0.286 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ac50d4 method=java.util.LinkedHashMap$LinkedHashIterator.hasNext()Z @ 4
+Event: 0.287 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795ac3158 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 152
+Event: 0.287 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795ac3158 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 152
+Event: 0.287 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795ac3158 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 152
+Event: 0.287 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795ac3158 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 152
+Event: 0.289 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795aca8dc method=java.util.Arrays.equals([B[B)Z @ 2
+Event: 0.290 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795acc10c method=com.sun.nio.zipfs.ZipFileSystem.getParent([B)[B @ 21
+Event: 0.294 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ac22c4 method=java.util.Arrays.hashCode([B)I @ 1
+Event: 0.295 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795abe834 method=com.sun.nio.zipfs.ZipConstants.pkSigAt([BIII)Z @ 5
+Event: 0.295 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ac1ee0 method=java.util.LinkedHashMap.linkNodeLast(Ljava/util/LinkedHashMap$Entry;)V @ 11
+Event: 0.309 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795ac2600 method=java.util.LinkedHashMap.afterNodeInsertion(Z)V @ 15
+Event: 0.399 Thread 0x000001f795814800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x000001f795b54724 method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 49
+Event: 0.404 Thread 0x000001f795814800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x000001f795b599d0 method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 0.404 Thread 0x000001f795814800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x000001f795b599d0 method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 0.404 Thread 0x000001f795814800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x000001f795b599d0 method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 0.404 Thread 0x000001f795814800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x000001f795b599d0 method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 0.418 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b6f98c method=sun.nio.cs.UTF_8$Decoder.decodeArrayLoop(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult; @ 77
+Event: 0.478 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b71628 method=java.util.Hashtable.addEntry(ILjava/lang/Object;Ljava/lang/Object;I)V @ 24
+Event: 0.482 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b9cb9c method=java.util.Hashtable.rehash()V @ 81
+Event: 0.577 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b5a5bc method=org.snu.ids.ha.dic.ProbDicReader.read()[Ljava/lang/String; @ 61
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b88960 method=java.lang.Character.isSurrogate(C)Z @ 3
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b1d730 method=java.lang.Character.isSurrogate(C)Z @ 3
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b45c44 method=sun.misc.FloatingDecimal.readJavaFormatString(Ljava/lang/String;)Lsun/misc/FloatingDecimal$ASCIIToBinaryConverter; @ 169
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b5b81c method=sun.misc.FDBigInteger.leftShift(I)Lsun/misc/FDBigInteger; @ 323
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795b75868 method=sun.misc.FloatingDecimal.parseFloat(Ljava/lang/String;)F @ 4
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795b75868 method=sun.misc.FloatingDecimal.parseFloat(Ljava/lang/String;)F @ 4
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795b75868 method=sun.misc.FloatingDecimal.parseFloat(Ljava/lang/String;)F @ 4
+Event: 0.578 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795b75868 method=sun.misc.FloatingDecimal.parseFloat(Ljava/lang/String;)F @ 4
+Event: 0.579 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b6cac8 method=sun.misc.FDBigInteger.cmp(Lsun/misc/FDBigInteger;)I @ 22
+Event: 0.702 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b9a3f0 method=java.util.Hashtable.rehash()V @ 81
+Event: 0.727 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795bc9ca4 method=java.lang.Long.stringSize(J)I @ 11
+Event: 0.796 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795be9440 method=java.lang.Long.stringSize(J)I @ 11
+Event: 0.807 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795a952a8 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 1.919 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795c0326c method=org.snu.ids.ha.dic.PDDictionary.loadLnprPosGMorp(Ljava/lang/String;Ljava/util/Hashtable;)V @ 22
+Event: 1.919 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795bfd49c method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 1.919 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795a96068 method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 1.920 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b5828c method=java.util.Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object; @ 27
+Event: 2.080 Thread 0x000001f795814800 Uncommon trap: reason=uninitialized action=reinterpret pc=0x000001f795c05fdc method=org.snu.ids.ha.dic.SpacingPDDictionary.load(Ljava/lang/String;)V @ 121
+Event: 2.150 Thread 0x000001f795814800 Uncommon trap: reason=uninitialized action=reinterpret pc=0x000001f795c323dc method=org.snu.ids.ha.dic.SpacingPDDictionary.load(Ljava/lang/String;)V @ 121
+Event: 2.216 Thread 0x000001f795814800 Uncommon trap: reason=uninitialized action=reinterpret pc=0x000001f795c40ddc method=org.snu.ids.ha.dic.SpacingPDDictionary.load(Ljava/lang/String;)V @ 121
+Event: 2.226 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795bab318 method=org.snu.ids.ha.util.Util.valid(Ljava/lang/String;)Z @ 1
+Event: 2.226 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b961ac method=java.lang.String.split(Ljava/lang/String;I)[Ljava/lang/String; @ 8
+Event: 2.859 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795c6d24c method=java.lang.String.trim()Ljava/lang/String; @ 15
+Event: 2.859 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b73dd8 method=java.lang.String.trim()Ljava/lang/String; @ 15
+Event: 3.374 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d2661c method=org.snu.ids.ha.dic.Dictionary.load(Lorg/snu/ids/ha/dic/SimpleDicReader;)V @ 14
+Event: 3.374 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cfba18 method=org.snu.ids.ha.dic.Dictionary.add(Ljava/lang/String;Lorg/snu/ids/ha/ma/MCandidate;)V @ 64
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cf5470 method=org.snu.ids.ha.ma.Morpheme.create(Ljava/lang/String;)Lorg/snu/ids/ha/ma/Morpheme; @ 47
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d02c14 method=org.snu.ids.ha.ma.Morpheme.setComposed(Ljava/lang/String;)V @ 5
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ca68dc method=org.snu.ids.ha.ma.Morpheme.setComposed(Z)V @ 1
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cc6cd0 method=java.lang.AbstractStringBuilder.append(J)Ljava/lang/AbstractStringBuilder; @ 20
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b5c458 method=java.lang.Long.stringSize(J)I @ 11
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b536e4 method=java.lang.Long.getChars(JI[C)V @ 9
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b8ac24 method=java.lang.AbstractStringBuilder.append(J)Ljava/lang/AbstractStringBuilder; @ 20
+Event: 3.490 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cbf798 method=java.lang.String.split(Ljava/lang/String;I)[Ljava/lang/String; @ 32
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cd9780 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795c93da4 method=java.util.regex.Matcher.search(I)Z @ 91
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cfa160 method=org.snu.ids.ha.ma.Morpheme.create(Ljava/lang/String;)Lorg/snu/ids/ha/ma/Morpheme; @ 47
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b8a2d4 method=java.lang.AbstractStringBuilder.append(J)Ljava/lang/AbstractStringBuilder; @ 20
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cd9780 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cd9780 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cd9780 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 3.491 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795d012c0 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 3.874 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d76f90 method=java.util.regex.Pattern.split(Ljava/lang/CharSequence;I)[Ljava/lang/String; @ 167
+Event: 3.879 Thread 0x000001f795814800 Uncommon trap: reason=range_check action=make_not_entrant pc=0x000001f795d706f8 method=org.snu.ids.ha.ma.Morpheme.create(Ljava/lang/String;)Lorg/snu/ids/ha/ma/Morpheme; @ 40
+Event: 3.880 Thread 0x000001f795814800 Uncommon trap: reason=range_check action=make_not_entrant pc=0x000001f795d534b0 method=org.snu.ids.ha.ma.Morpheme.create(Ljava/lang/String;)Lorg/snu/ids/ha/ma/Morpheme; @ 40
+Event: 3.891 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cd6ed8 method=org.snu.ids.ha.util.Hangul.split(C)Lorg/snu/ids/ha/util/Hangul; @ 21
+Event: 3.892 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cdc880 method=org.snu.ids.ha.util.Hangul.split(C)Lorg/snu/ids/ha/util/Hangul; @ 21
+Event: 3.894 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d5a7b4 method=java.util.ArrayList.contains(Ljava/lang/Object;)Z @ 5
+Event: 3.898 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ccaca8 method=java.util.regex.Pattern$BitClass.isSatisfiedBy(I)Z @ 4
+Event: 3.900 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d3f9b4 method=java.util.regex.Pattern$BitClass.isSatisfiedBy(I)Z @ 13
+Event: 3.900 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d3707c method=java.util.regex.Pattern$BitClass.isSatisfiedBy(I)Z @ 13
+Event: 3.900 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d65608 method=org.snu.ids.ha.ma.Morpheme.setComposed(Ljava/lang/String;)V @ 14
+Event: 3.900 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d86308 method=org.snu.ids.ha.ma.MCandidate.getBasicApndblTags()J @ 16
+Event: 3.900 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d5631c method=org.snu.ids.ha.ma.MCandidate.getBasicHavingConds()J @ 16
+Event: 3.900 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cfe558 method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 11
+Event: 3.901 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d59330 method=org.snu.ids.ha.ma.MCandidate.getBasicApndblTags()J @ 16
+Event: 3.901 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795caee18 method=org.snu.ids.ha.ma.MCandidate.addHavingCond(J)V @ 143
+Event: 3.901 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cdfe84 method=org.snu.ids.ha.ma.MCandidate.getBasicHavingConds()J @ 16
+Event: 3.901 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cec38c method=org.snu.ids.ha.ma.MCandidate.calcDicLen()V @ 267
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d07b30 method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 11
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cdfc18 method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 11
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cdb648 method=org.snu.ids.ha.ma.MCandidate.getBasicApndblTags()J @ 16
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d5cf10 method=java.util.ArrayList.clear()V @ 17
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d52b40 method=org.snu.ids.ha.ma.MorphemeList.add(Lorg/snu/ids/ha/ma/Morpheme;)Z @ 4
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795c8bc1c method=java.util.ArrayList.clear()V @ 17
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ce3efc method=org.snu.ids.ha.ma.MorphemeList.getEncStr()Ljava/lang/String; @ 19
+Event: 3.902 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ccfcb4 method=org.snu.ids.ha.ma.MorphemeList.getEncStr()Ljava/lang/String; @ 19
+Event: 3.912 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795ad3790 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 91
+Event: 3.925 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795ad3290 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 193
+Event: 5.223 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795e26004 method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 29
+Event: 5.223 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d9ba1c method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 29
+Event: 5.223 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795da6644 method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 29
+Event: 5.223 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795e5e3fc method=org.snu.ids.ha.ma.MCandidate.equals(Ljava/lang/Object;)Z @ 8
+Event: 5.223 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795e42e8c method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 29
+Event: 5.226 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795e682e0 method=org.snu.ids.ha.dic.PDDictionary.getPrTag(J)J @ 43
+Event: 5.226 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795dc61e8 method=org.snu.ids.ha.ma.MCandidate.equals(Ljava/lang/Object;)Z @ 8
+Event: 5.228 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795e3bbe8 method=org.snu.ids.ha.ma.MCandidate.getBasicHavingConds()J @ 68
+Event: 5.228 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795dba8dc method=org.snu.ids.ha.ma.MCandidate.getBasicHavingConds()J @ 68
+Event: 5.294 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795e23790 method=org.snu.ids.ha.ma.MCandidate.calcDicLen()V @ 284
+Event: 5.299 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d53038 method=java.util.StringTokenizer.skipDelimiters(I)I @ 21
+Event: 5.299 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d57f2c method=java.util.StringTokenizer.scanToken(I)I @ 31
+Event: 5.300 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d5425c method=java.util.StringTokenizer.scanToken(I)I @ 31
+Event: 5.300 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795dc9adc method=org.snu.ids.ha.ma.MCandidate.getBasicPhonemeConds(Ljava/lang/String;)J @ 286
+Event: 5.300 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795dc2b50 method=org.snu.ids.ha.ma.MCandidate.addHavingCond(J)V @ 74
+Event: 5.301 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795dce260 method=java.lang.String.split(Ljava/lang/String;I)[Ljava/lang/String; @ 281
+Event: 5.309 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cdd6d8 method=java.util.regex.Pattern.range(Ljava/util/regex/Pattern$BitClass;)Ljava/util/regex/Pattern$CharProperty; @ 137
+Event: 5.309 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cdecb8 method=java.util.regex.Pattern.range(Ljava/util/regex/Pattern$BitClass;)Ljava/util/regex/Pattern$CharProperty; @ 137
+Event: 5.309 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cc1be8 method=java.util.regex.Pattern.sequence(Ljava/util/regex/Pattern$Node;)Ljava/util/regex/Pattern$Node; @ 512
+Event: 5.309 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795d50e78 method=java.util.regex.Pattern$Curly.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 31
+Event: 5.309 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d0acf4 method=java.util.regex.Pattern$CharProperty.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 25
+Event: 5.309 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795d38ed0 method=java.util.regex.Pattern$Curly.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 31
+Event: 5.309 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d46408 method=java.util.regex.Pattern.expr(Ljava/util/regex/Pattern$Node;)Ljava/util/regex/Pattern$Node; @ 129
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=unloaded action=reinterpret pc=0x000001f795cd82d4 method=java.util.regex.Pattern.closure(Ljava/util/regex/Pattern$Node;)Ljava/util/regex/Pattern$Node; @ 256
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cb5ec4 method=java.util.regex.Pattern$Node.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 12
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d0acf4 method=java.util.regex.Pattern$CharProperty.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 25
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d0acf4 method=java.util.regex.Pattern$CharProperty.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 25
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d0acf4 method=java.util.regex.Pattern$CharProperty.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 25
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d51148 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cbace4 method=java.util.regex.Pattern.RemoveQEQuoting()V @ 22
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cb5ec4 method=java.util.regex.Pattern$Node.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 12
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d51148 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cb5ec4 method=java.util.regex.Pattern$Node.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 12
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795d38ed0 method=java.util.regex.Pattern$Curly.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 31
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d51148 method=java.util.regex.Pattern$Start.<init>(Ljava/util/regex/Pattern$Node;)V @ 22
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795d38ed0 method=java.util.regex.Pattern$Curly.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 31
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795cb5ec4 method=java.util.regex.Pattern$Node.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 12
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d51208 method=java.util.regex.Pattern$CharProperty.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 25
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795d4572c method=java.util.regex.Pattern$CharProperty.study(Ljava/util/regex/Pattern$TreeInfo;)Z @ 25
+Event: 5.310 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cbd0c8 method=java.util.regex.Pattern.bitsOrSingle(Ljava/util/regex/Pattern$BitClass;I)Ljava/util/regex/Pattern$CharProperty; @ 4
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795e21f38 method=java.util.ArrayList.addAll(Ljava/util/Collection;)Z @ 45
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d4e6d4 method=java.util.regex.Matcher.reset()Ljava/util/regex/Matcher; @ 47
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795d3f418 method=java.util.regex.Matcher.reset()Ljava/util/regex/Matcher; @ 47
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795c6cbc0 method=java.util.regex.Matcher.reset()Ljava/util/regex/Matcher; @ 47
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795dc4f34 method=org.snu.ids.ha.ma.MorphemeList.getEncStr()Ljava/lang/String; @ 35
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795dc4f34 method=org.snu.ids.ha.ma.MorphemeList.getEncStr()Ljava/lang/String; @ 35
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795dc4f34 method=org.snu.ids.ha.ma.MorphemeList.getEncStr()Ljava/lang/String; @ 35
+Event: 5.322 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795bcbcec method=sun.misc.FDBigInteger.leftShift(I)Lsun/misc/FDBigInteger; @ 173
+Event: 5.322 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b423d8 method=sun.misc.FDBigInteger.cmp(Lsun/misc/FDBigInteger;)I @ 22
+Event: 5.325 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795dc4f34 method=org.snu.ids.ha.ma.MorphemeList.getEncStr()Ljava/lang/String; @ 35
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f28ee4 method=org.snu.ids.ha.ma.MCandidate.calcLnprOfTagging()V @ 29
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f28ee4 method=org.snu.ids.ha.ma.MCandidate.calcLnprOfTagging()V @ 29
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f28ee4 method=org.snu.ids.ha.ma.MCandidate.calcLnprOfTagging()V @ 29
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f28ee4 method=org.snu.ids.ha.ma.MCandidate.calcLnprOfTagging()V @ 29
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cd6160 method=java.lang.String.trim()Ljava/lang/String; @ 23
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795ba9648 method=java.util.Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 18
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795ba9648 method=java.util.Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 18
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795ba9648 method=java.util.Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 18
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795ba9648 method=java.util.Hashtable.put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; @ 18
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795b856c0 method=java.util.Hashtable.addEntry(ILjava/lang/Object;Ljava/lang/Object;I)V @ 24
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795bc6d80 method=sun.misc.FloatingDecimal.readJavaFormatString(Ljava/lang/String;)Lsun/misc/FloatingDecimal$ASCIIToBinaryConverter; @ 286
+Event: 5.348 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795caa148 method=java.util.Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object; @ 6
+Event: 5.348 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795caa148 method=java.util.Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object; @ 6
+Event: 5.348 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795f1c820 method=java.util.regex.Pattern$Curly.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 22
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f17e24 method=org.snu.ids.ha.ma.MCandidate.addAll(Lorg/snu/ids/ha/ma/MorphemeList;)V @ 16
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f17e24 method=org.snu.ids.ha.ma.MCandidate.addAll(Lorg/snu/ids/ha/ma/MorphemeList;)V @ 16
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f17e24 method=org.snu.ids.ha.ma.MCandidate.addAll(Lorg/snu/ids/ha/ma/MorphemeList;)V @ 16
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795f17e24 method=org.snu.ids.ha.ma.MCandidate.addAll(Lorg/snu/ids/ha/ma/MorphemeList;)V @ 16
+Event: 5.353 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795caa148 method=java.util.Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object; @ 6
+Event: 5.353 Thread 0x000001f795814800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000001f795caa148 method=java.util.Hashtable.get(Ljava/lang/Object;)Ljava/lang/Object; @ 6
+Event: 5.356 Thread 0x000001f795814800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000001f795e28524 method=org.snu.ids.ha.ma.MCandidate.addAll(Lorg/snu/ids/ha/ma/MorphemeList;)V @ 16
+Event: 5.367 Thread 0x000001f795814800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001f795cdb24c method=org.snu.ids.ha.ma.MCandidate.isTagOf(J)Z @ 5
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (11 events):
+Event: 0.019 Thread 0x000001f795814800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000eab07cc0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\
+Event: 0.019 Thread 0x000001f795814800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000eab07fa8) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 4014
+Event: 0.070 Thread 0x000001f795814800 Exception <a 'java/lang/NoClassDefFoundError': org/jpype/classloader/DynamicClassLoader> (0x00000000eac3a6d8) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 206]
+Event: 0.110 Thread 0x000001f795814800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000eae71b30) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 0.111 Thread 0x000001f795814800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000eae733c0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 0.263 Thread 0x000001f795814800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eaf6aea0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1530]
+Event: 0.263 Thread 0x000001f795814800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eaf6b0b0) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1530]
+Event: 0.264 Thread 0x000001f795814800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eaf700c8) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1530]
+Event: 0.264 Thread 0x000001f795814800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000eaf702d8) thrown at [C:\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1530]
+Event: 0.294 Thread 0x000001f795814800 Implicit null exception at 0x000001f795ac2192 to 0x000001f795ac22a9
+Event: 0.295 Thread 0x000001f795814800 Implicit null exception at 0x000001f795ac1e84 to 0x000001f795ac1ec5
+
+Events (250 events):
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795dc4f34
+Event: 5.311 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795dc4f34 sp=0x000000f2d8be81b0
+Event: 5.311 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be81a0 mode 2
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795dc4f34
+Event: 5.311 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795dc4f34 sp=0x000000f2d8be81b0
+Event: 5.311 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be81a0 mode 2
+Event: 5.311 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795dc4f34
+Event: 5.311 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795dc4f34 sp=0x000000f2d8be81b0
+Event: 5.311 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be81a0 mode 2
+Event: 5.311 loading class java/util/Formatter
+Event: 5.312 loading class java/util/Formatter done
+Event: 5.312 loading class java/util/regex/Pattern$Ctype
+Event: 5.312 loading class java/util/regex/Pattern$Ctype done
+Event: 5.312 loading class java/util/Locale$Category
+Event: 5.312 loading class java/util/Locale$Category done
+Event: 5.312 loading class java/util/Locale$1
+Event: 5.312 loading class java/util/Locale$1 done
+Event: 5.312 loading class java/text/DecimalFormatSymbols
+Event: 5.312 loading class java/text/DecimalFormatSymbols done
+Event: 5.312 loading class java/text/spi/DecimalFormatSymbolsProvider
+Event: 5.312 loading class java/util/spi/LocaleServiceProvider
+Event: 5.312 loading class java/util/spi/LocaleServiceProvider done
+Event: 5.312 loading class java/text/spi/DecimalFormatSymbolsProvider done
+Event: 5.312 loading class sun/util/locale/provider/LocaleProviderAdapter
+Event: 5.312 loading class sun/util/locale/provider/LocaleProviderAdapter done
+Event: 5.312 loading class sun/util/locale/provider/JRELocaleProviderAdapter
+Event: 5.312 loading class sun/util/locale/provider/ResourceBundleBasedAdapter
+Event: 5.312 loading class sun/util/locale/provider/ResourceBundleBasedAdapter done
+Event: 5.312 loading class sun/util/locale/provider/JRELocaleProviderAdapter done
+Event: 5.312 loading class sun/util/locale/provider/SPILocaleProviderAdapter
+Event: 5.312 loading class sun/util/locale/provider/AuxLocaleProviderAdapter
+Event: 5.312 loading class sun/util/locale/provider/AuxLocaleProviderAdapter done
+Event: 5.312 loading class sun/util/locale/provider/SPILocaleProviderAdapter done
+Event: 5.312 loading class sun/util/locale/provider/AuxLocaleProviderAdapter$NullProvider
+Event: 5.312 loading class sun/util/locale/provider/AuxLocaleProviderAdapter$NullProvider done
+Event: 5.312 loading class sun/util/locale/provider/LocaleProviderAdapter$Type
+Event: 5.312 loading class sun/util/locale/provider/LocaleProviderAdapter$Type done
+Event: 5.312 loading class sun/util/locale/provider/LocaleProviderAdapter$1
+Event: 5.313 loading class sun/util/locale/provider/LocaleProviderAdapter$1 done
+Event: 5.313 loading class sun/util/locale/provider/DecimalFormatSymbolsProviderImpl
+Event: 5.313 loading class sun/util/locale/provider/AvailableLanguageTags
+Event: 5.313 loading class sun/util/locale/provider/AvailableLanguageTags done
+Event: 5.313 loading class sun/util/locale/provider/DecimalFormatSymbolsProviderImpl done
+Event: 5.313 loading class sun/util/locale/provider/LocaleDataMetaInfo
+Event: 5.313 loading class sun/util/locale/provider/LocaleDataMetaInfo done
+Event: 5.313 loading class sun/util/locale/provider/JRELocaleProviderAdapter$1
+Event: 5.313 loading class sun/util/locale/provider/JRELocaleProviderAdapter$1 done
+Event: 5.313 loading class sun/util/locale/LanguageTag
+Event: 5.313 loading class sun/util/locale/LanguageTag done
+Event: 5.313 loading class sun/util/locale/provider/LocaleResources
+Event: 5.313 loading class sun/util/locale/provider/LocaleResources done
+Event: 5.313 loading class sun/util/resources/LocaleData
+Event: 5.313 loading class sun/util/resources/LocaleData done
+Event: 5.313 loading class sun/util/resources/LocaleData$1
+Event: 5.313 loading class sun/util/resources/LocaleData$1 done
+Event: 5.313 loading class sun/util/resources/LocaleData$LocaleDataResourceBundleControl
+Event: 5.314 loading class java/util/ResourceBundle$Control
+Event: 5.314 loading class java/util/ResourceBundle$Control done
+Event: 5.314 loading class sun/util/resources/LocaleData$LocaleDataResourceBundleControl done
+Event: 5.314 loading class java/util/ResourceBundle$Control$CandidateListCache
+Event: 5.314 loading class java/util/ResourceBundle$Control$CandidateListCache done
+Event: 5.314 loading class java/util/ResourceBundle
+Event: 5.314 loading class java/util/ResourceBundle done
+Event: 5.314 loading class java/util/ResourceBundle$1
+Event: 5.314 loading class java/util/ResourceBundle$1 done
+Event: 5.314 loading class java/util/spi/ResourceBundleControlProvider
+Event: 5.314 loading class java/util/spi/ResourceBundleControlProvider done
+Event: 5.314 loading class java/util/ResourceBundle$RBClassLoader
+Event: 5.314 loading class java/util/ResourceBundle$RBClassLoader done
+Event: 5.314 loading class java/util/ResourceBundle$RBClassLoader$1
+Event: 5.314 loading class java/util/ResourceBundle$RBClassLoader$1 done
+Event: 5.314 loading class java/util/ResourceBundle$CacheKey
+Event: 5.314 loading class java/util/ResourceBundle$CacheKey done
+Event: 5.314 loading class java/util/ResourceBundle$LoaderReference
+Event: 5.314 loading class java/util/ResourceBundle$CacheKeyReference
+Event: 5.314 loading class java/util/ResourceBundle$CacheKeyReference done
+Event: 5.314 loading class java/util/ResourceBundle$LoaderReference done
+Event: 5.314 loading class java/util/ResourceBundle$SingleFormatControl
+Event: 5.314 loading class java/util/ResourceBundle$SingleFormatControl done
+Event: 5.314 loading class sun/text/resources/FormatData
+Event: 5.314 loading class sun/util/resources/ParallelListResourceBundle
+Event: 5.314 loading class sun/util/resources/ParallelListResourceBundle done
+Event: 5.314 loading class sun/text/resources/FormatData done
+Event: 5.315 loading class java/util/concurrent/atomic/AtomicMarkableReference
+Event: 5.315 loading class java/util/concurrent/atomic/AtomicMarkableReference done
+Event: 5.315 loading class java/util/concurrent/atomic/AtomicMarkableReference$Pair
+Event: 5.315 loading class java/util/concurrent/atomic/AtomicMarkableReference$Pair done
+Event: 5.315 loading class java/util/ResourceBundle$BundleReference
+Event: 5.315 loading class java/util/ResourceBundle$BundleReference done
+Event: 5.315 loading class sun/text/resources/ko/FormatData_ko
+Event: 5.315 loading class sun/text/resources/ko/FormatData_ko done
+Event: 5.316 loading class sun/text/resources/ko/FormatData_ko_KR
+Event: 5.316 loading class sun/text/resources/ko/FormatData_ko_KR done
+Event: 5.316 loading class sun/util/resources/ParallelListResourceBundle$KeySet
+Event: 5.316 loading class sun/util/resources/ParallelListResourceBundle$KeySet done
+Event: 5.317 loading class sun/util/locale/provider/LocaleResources$ResourceReference
+Event: 5.317 loading class sun/util/locale/provider/LocaleResources$ResourceReference done
+Event: 5.317 loading class java/util/Currency
+Event: 5.317 loading class java/util/Currency done
+Event: 5.317 loading class java/util/Currency$1
+Event: 5.317 loading class java/util/Currency$1 done
+Event: 5.317 loading class java/io/DataInputStream
+Event: 5.317 loading class java/io/DataInputStream done
+Event: 5.318 loading class java/util/spi/CurrencyNameProvider
+Event: 5.318 loading class java/util/spi/CurrencyNameProvider done
+Event: 5.318 loading class sun/util/locale/provider/LocaleServiceProviderPool
+Event: 5.318 loading class sun/util/locale/provider/LocaleServiceProviderPool done
+Event: 5.318 loading class java/text/spi/BreakIteratorProvider
+Event: 5.318 loading class java/text/spi/BreakIteratorProvider done
+Event: 5.318 loading class java/text/spi/CollatorProvider
+Event: 5.318 loading class java/text/spi/CollatorProvider done
+Event: 5.318 loading class java/text/spi/DateFormatProvider
+Event: 5.318 loading class java/text/spi/DateFormatProvider done
+Event: 5.318 loading class java/text/spi/DateFormatSymbolsProvider
+Event: 5.318 loading class java/text/spi/DateFormatSymbolsProvider done
+Event: 5.318 loading class java/text/spi/NumberFormatProvider
+Event: 5.318 loading class java/text/spi/NumberFormatProvider done
+Event: 5.318 loading class java/util/spi/LocaleNameProvider
+Event: 5.318 loading class java/util/spi/LocaleNameProvider done
+Event: 5.318 loading class java/util/spi/TimeZoneNameProvider
+Event: 5.318 loading class java/util/spi/TimeZoneNameProvider done
+Event: 5.318 loading class java/util/spi/CalendarDataProvider
+Event: 5.318 loading class java/util/spi/CalendarDataProvider done
+Event: 5.318 loading class sun/util/locale/provider/CurrencyNameProviderImpl
+Event: 5.318 loading class sun/util/locale/provider/CurrencyNameProviderImpl done
+Event: 5.318 loading class sun/util/locale/provider/SPILocaleProviderAdapter$1
+Event: 5.318 loading class sun/util/locale/provider/SPILocaleProviderAdapter$1 done
+Event: 5.318 loading class java/util/Currency$CurrencyNameGetter
+Event: 5.318 loading class sun/util/locale/provider/LocaleServiceProviderPool$LocalizedObjectGetter
+Event: 5.318 loading class sun/util/locale/provider/LocaleServiceProviderPool$LocalizedObjectGetter done
+Event: 5.318 loading class java/util/Currency$CurrencyNameGetter done
+Event: 5.319 loading class sun/util/resources/CurrencyNames
+Event: 5.319 loading class sun/util/resources/LocaleNamesBundle
+Event: 5.319 loading class sun/util/resources/OpenListResourceBundle
+Event: 5.319 loading class sun/util/resources/OpenListResourceBundle done
+Event: 5.319 loading class sun/util/resources/LocaleNamesBundle done
+Event: 5.319 loading class sun/util/resources/CurrencyNames done
+Event: 5.319 loading class sun/util/resources/ko/CurrencyNames_ko
+Event: 5.319 loading class sun/util/resources/ko/CurrencyNames_ko done
+Event: 5.319 loading class sun/util/resources/ko/CurrencyNames_ko_KR
+Event: 5.319 loading class sun/util/resources/ko/CurrencyNames_ko_KR done
+Event: 5.319 loading class java/util/Formatter$FixedString
+Event: 5.320 loading class java/util/Formatter$FormatString
+Event: 5.320 loading class java/util/Formatter$FormatString done
+Event: 5.320 loading class java/util/Formatter$FixedString done
+Event: 5.320 loading class java/util/Formatter$FormatSpecifier
+Event: 5.320 loading class java/util/Formatter$FormatSpecifier done
+Event: 5.320 loading class java/util/Formatter$Flags
+Event: 5.320 loading class java/util/Formatter$Flags done
+Event: 5.320 loading class java/util/Formatter$Conversion
+Event: 5.320 loading class java/util/Formatter$Conversion done
+Event: 5.320 loading class java/util/Formattable
+Event: 5.320 loading class java/util/Formattable done
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal$Form
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal$Form done
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal done
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal$1
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal$1 done
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal$2
+Event: 5.321 loading class sun/misc/FormattedFloatingDecimal$2 done
+Event: 5.322 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f795bcbcec
+Event: 5.322 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795bcbcec sp=0x000000f2d8be7b10
+Event: 5.322 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be7ab8 mode 2
+Event: 5.322 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f795b423d8
+Event: 5.322 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795b423d8 sp=0x000000f2d8be7b40
+Event: 5.322 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be7ac0 mode 2
+Event: 5.324 loading class org/snu/ids/ha/constants/Symbol
+Event: 5.324 loading class org/snu/ids/ha/constants/Symbol done
+Event: 5.325 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795dc4f34
+Event: 5.325 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795dc4f34 sp=0x000000f2d8be81b0
+Event: 5.325 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be81a0 mode 2
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f28ee4
+Event: 5.341 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f28ee4 sp=0x000000f2d8be82d0
+Event: 5.341 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8360 mode 2
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f28ee4
+Event: 5.341 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f28ee4 sp=0x000000f2d8be82d0
+Event: 5.341 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8360 mode 2
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f28ee4
+Event: 5.341 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f28ee4 sp=0x000000f2d8be82d0
+Event: 5.341 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8360 mode 2
+Event: 5.341 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f28ee4
+Event: 5.341 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f28ee4 sp=0x000000f2d8be82d0
+Event: 5.341 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8360 mode 2
+Event: 5.343 loading class org/snu/ids/ha/dic/UNPDDictionary
+Event: 5.343 loading class org/snu/ids/ha/dic/UNPDDictionary done
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f795cd6160
+Event: 5.344 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795cd6160 sp=0x000000f2d8be7a40
+Event: 5.344 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be79d8 mode 2
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795ba9648
+Event: 5.344 Executing VM operation: RevokeBias
+Event: 5.344 Executing VM operation: RevokeBias done
+Event: 5.344 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795ba9648 sp=0x000000f2d8be79e0
+Event: 5.344 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be79b0 mode 2
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795ba9648
+Event: 5.344 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795ba9648 sp=0x000000f2d8be79e0
+Event: 5.344 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be79b0 mode 2
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795ba9648
+Event: 5.344 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795ba9648 sp=0x000000f2d8be79e0
+Event: 5.344 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be79b0 mode 2
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795ba9648
+Event: 5.344 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795ba9648 sp=0x000000f2d8be79e0
+Event: 5.344 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be79b0 mode 2
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f795b856c0
+Event: 5.344 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795b856c0 sp=0x000000f2d8be7970
+Event: 5.344 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be7920 mode 2
+Event: 5.344 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f795bc6d80
+Event: 5.344 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795bc6d80 sp=0x000000f2d8be79f0
+Event: 5.344 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be7938 mode 2
+Event: 5.348 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x000001f795caa148
+Event: 5.348 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795caa148 sp=0x000000f2d8be82f0
+Event: 5.348 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be82a8 mode 2
+Event: 5.348 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x000001f795caa148
+Event: 5.348 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795caa148 sp=0x000000f2d8be82f0
+Event: 5.348 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be82a8 mode 2
+Event: 5.348 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f795f1c820
+Event: 5.348 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f1c820 sp=0x000000f2d8be7f10
+Event: 5.348 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be7f10 mode 2
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f17e24
+Event: 5.350 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f17e24 sp=0x000000f2d8be8370
+Event: 5.350 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8370 mode 2
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f17e24
+Event: 5.350 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f17e24 sp=0x000000f2d8be8370
+Event: 5.350 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8370 mode 2
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f17e24
+Event: 5.350 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f17e24 sp=0x000000f2d8be8370
+Event: 5.350 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8370 mode 2
+Event: 5.350 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795f17e24
+Event: 5.350 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795f17e24 sp=0x000000f2d8be8370
+Event: 5.350 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8370 mode 2
+Event: 5.353 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x000001f795caa148
+Event: 5.353 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795caa148 sp=0x000000f2d8be82e0
+Event: 5.353 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8298 mode 2
+Event: 5.353 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffc6 fr.pc=0x000001f795caa148
+Event: 5.353 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795caa148 sp=0x000000f2d8be82e0
+Event: 5.353 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8298 mode 2
+Event: 5.356 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffffde fr.pc=0x000001f795e28524
+Event: 5.356 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795e28524 sp=0x000000f2d8be8370
+Event: 5.356 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be8370 mode 2
+Event: 5.365 loading class org/snu/ids/ha/ma/MExpression$2
+Event: 5.366 loading class org/snu/ids/ha/ma/MExpression$2 done
+Event: 5.366 loading class java/util/TimSort
+Event: 5.366 loading class java/util/TimSort done
+Event: 5.366 loading class org/snu/ids/ha/ma/Sentence
+Event: 5.366 loading class org/snu/ids/ha/ma/Sentence done
+Event: 5.367 loading class org/snu/ids/ha/ma/Eojeol
+Event: 5.367 loading class org/snu/ids/ha/ma/Eojeol done
+Event: 5.367 Thread 0x000001f795814800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000001f795cdb24c
+Event: 5.367 Thread 0x000001f795814800 DEOPT PACKING pc=0x000001f795cdb24c sp=0x000000f2d8be8610
+Event: 5.367 Thread 0x000001f795814800 DEOPT UNPACKING pc=0x000001f795915583 sp=0x000000f2d8be85c0 mode 2
+
+
+Dynamic libraries:
+0x00007ff648e20000 - 0x00007ff648e3c000 	C:\Users\sizin\.conda\envs\setiment-pytorch\python.exe
+0x00007ff9d2790000 - 0x00007ff9d2985000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff9d0e90000 - 0x00007ff9d0f4e000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff9cfea0000 - 0x00007ff9d0168000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9d0590000 - 0x00007ff9d0690000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff957880000 - 0x00007ff957cf6000 	C:\Users\sizin\.conda\envs\setiment-pytorch\python39.dll
+0x00007ff9d22c0000 - 0x00007ff9d232b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff9d08d0000 - 0x00007ff9d09fa000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff9d1370000 - 0x00007ff9d141c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff9d2100000 - 0x00007ff9d219e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff9d2000000 - 0x00007ff9d209b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff9c63c0000 - 0x00007ff9c63d9000 	C:\Users\sizin\.conda\envs\setiment-pytorch\VCRUNTIME140.dll
+0x00007ff9ca050000 - 0x00007ff9ca05a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff995ad0000 - 0x00007ff995db7000 	C:\Windows\pcdrm\NSCCOR0364.DLL
+0x00007ff9d0a00000 - 0x00007ff9d0ba1000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff9d0560000 - 0x00007ff9d0582000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff9d2280000 - 0x00007ff9d22ab000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff9d06c0000 - 0x00007ff9d07cd000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff9d03b0000 - 0x00007ff9d044d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff9d0bb0000 - 0x00007ff9d0cda000 	C:\WINDOWS\System32\ole32.dll
+0x00007ff9d23f0000 - 0x00007ff9d2745000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9d0450000 - 0x00007ff9d04b0000 	C:\WINDOWS\System32\WINTRUST.dll
+0x00007ff9d08a0000 - 0x00007ff9d08d0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff9d0170000 - 0x00007ff9d02c6000 	C:\WINDOWS\System32\CRYPT32.dll
+0x00007ff9cfa80000 - 0x00007ff9cfa92000 	C:\WINDOWS\SYSTEM32\MSASN1.dll
+0x00007ff9d22b0000 - 0x00007ff9d22b8000 	C:\WINDOWS\System32\psapi.dll
+0x00007ff9ceb90000 - 0x00007ff9cebc3000 	C:\WINDOWS\SYSTEM32\ntmarta.dll
+0x00007ff997fb0000 - 0x00007ff997fe3000 	C:\WINDOWS\pcdrm\NBID64.dll
+0x00007ff9d07d0000 - 0x00007ff9d089d000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff997f70000 - 0x00007ff997faa000 	C:\WINDOWS\pcdrm\NFD0164.dll
+0x00007ff996a70000 - 0x00007ff996aa0000 	C:\WINDOWS\SYSTEM32\f_im.dll
+0x0000000180000000 - 0x0000000180040000 	C:\Program Files\Fasoo DRM\f_nxa.dll
+0x0000000061000000 - 0x00000000611c1000 	C:\Program Files\Fasoo DRM\f_sps.dll
+0x00007ff9c6d90000 - 0x00007ff9c6d97000 	C:\WINDOWS\SYSTEM32\msimg32.dll
+0x00007ff9c6cf0000 - 0x00007ff9c6d85000 	C:\WINDOWS\SYSTEM32\winspool.drv
+0x00007ff9caff0000 - 0x00007ff9cb004000 	C:\WINDOWS\SYSTEM32\wtsapi32.dll
+0x000001f7ff7e0000 - 0x000001f7fff24000 	C:\WINDOWS\System32\shell32.dll
+0x00007ff9d1310000 - 0x00007ff9d1365000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff9cf840000 - 0x00007ff9cf858000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007ff9cef60000 - 0x00007ff9cef94000 	C:\WINDOWS\system32\rsaenh.dll
+0x000001f7ff570000 - 0x000001f7ff597000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff9cf860000 - 0x00007ff9cf86c000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x000001f7fff30000 - 0x000001f7fffb2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff9c6510000 - 0x00007ff9c651f000 	C:\Users\sizin\.conda\envs\setiment-pytorch\python3.DLL
+0x00007ff9a4eb0000 - 0x00007ff9a4ec6000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_socket.pyd
+0x00007ff9cf2f0000 - 0x00007ff9cf32b000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ff9c6490000 - 0x00007ff9c649a000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\select.pyd
+0x00007ff9a4e80000 - 0x00007ff9a4ea7000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_ssl.pyd
+0x00007ff957530000 - 0x00007ff95787c000 	C:\Users\sizin\.conda\envs\setiment-pytorch\Library\bin\libcrypto-1_1-x64.dll
+0x00007ff99ab10000 - 0x00007ff99abbc000 	C:\Users\sizin\.conda\envs\setiment-pytorch\Library\bin\libssl-1_1-x64.dll
+0x00007ff9a4e40000 - 0x00007ff9a4e52000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_asyncio.pyd
+0x00007ff9a4e30000 - 0x00007ff9a4e3d000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_overlapped.pyd
+0x00007ff9cf650000 - 0x00007ff9cf6ba000 	C:\WINDOWS\system32\mswsock.dll
+0x00007ff9a4f20000 - 0x00007ff9a4f37000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_bz2.pyd
+0x00007ff9a4ef0000 - 0x00007ff9a4f1a000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_lzma.pyd
+0x00007ff9c6250000 - 0x00007ff9c6259000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_queue.pyd
+0x00007ff98c3c0000 - 0x00007ff98c462000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\libzmq.cp39-win_amd64.pyd
+0x00007ff9bc5e0000 - 0x00007ff9bc66e000 	C:\WINDOWS\SYSTEM32\MSVCP140.dll
+0x00007ff9bc670000 - 0x00007ff9bc67c000 	C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll
+0x00007ff99f890000 - 0x00007ff99f8a5000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\constants.cp39-win_amd64.pyd
+0x00007ff9a4c40000 - 0x00007ff9a4c4c000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\error.cp39-win_amd64.pyd
+0x00007ff99f4a0000 - 0x00007ff99f4b9000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\message.cp39-win_amd64.pyd
+0x00007ff99aaf0000 - 0x00007ff99ab04000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\context.cp39-win_amd64.pyd
+0x00007ff99a8e0000 - 0x00007ff99a904000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\socket.cp39-win_amd64.pyd
+0x00007ff9a45e0000 - 0x00007ff9a45ee000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\utils.cp39-win_amd64.pyd
+0x00007ff99a8c0000 - 0x00007ff99a8d4000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\_poll.cp39-win_amd64.pyd
+0x00007ff9a42f0000 - 0x00007ff9a42fc000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\_version.cp39-win_amd64.pyd
+0x00007ff99a8a0000 - 0x00007ff99a8b2000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\_device.cp39-win_amd64.pyd
+0x00007ff9a41a0000 - 0x00007ff9a41b0000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\zmq\backend\cython\_proxy_steerable.cp39-win_amd64.pyd
+0x00007ff9a4ed0000 - 0x00007ff9a4ee1000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_hashlib.pyd
+0x00007ff9ba1a0000 - 0x00007ff9ba1a7000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\tornado\speedups.cp39-win_amd64.pyd
+0x00007ff9a4e60000 - 0x00007ff9a4e80000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_ctypes.pyd
+0x00007ff9a9b30000 - 0x00007ff9a9b3b000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\libffi-7.dll
+0x00007ff9a4de0000 - 0x00007ff9a4e23000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_decimal.pyd
+0x00007ff9a4dd0000 - 0x00007ff9a4dd8000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_uuid.pyd
+0x00007ff9a4ca0000 - 0x00007ff9a4cb8000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\_sqlite3.pyd
+0x00007ff974630000 - 0x00007ff974795000 	C:\Users\sizin\.conda\envs\setiment-pytorch\Library\bin\sqlite3.dll
+0x00007ff998c50000 - 0x00007ff998d64000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\unicodedata.pyd
+0x00007ff998c10000 - 0x00007ff998c43000 	C:\Users\sizin\.conda\envs\setiment-pytorch\DLLs\pyexpat.pyd
+0x00007ff998ac0000 - 0x00007ff998ae4000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\win32\win32api.pyd
+0x00007ff998e10000 - 0x00007ff998e36000 	C:\Users\sizin\.conda\envs\setiment-pytorch\Library\bin\pywintypes39.dll
+0x00007ff9bedc0000 - 0x00007ff9bedcc000 	C:\WINDOWS\SYSTEM32\secur32.dll
+0x00007ff9cfd90000 - 0x00007ff9cfdc1000 	C:\WINDOWS\SYSTEM32\SSPICLI.DLL
+0x00007ff9a2a00000 - 0x00007ff9a2a07000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\win32\_win32sysloader.pyd
+0x00007ff985640000 - 0x00007ff9856d3000 	C:\Users\sizin\.conda\envs\setiment-pytorch\Library\bin\pythoncom39.dll
+0x00007ff9ce740000 - 0x00007ff9ce752000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff9cca30000 - 0x00007ff9ccace000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007ff9bfb60000 - 0x00007ff9bfd4b000 	C:\WINDOWS\SYSTEM32\urlmon.dll
+0x00007ff9bf8b0000 - 0x00007ff9bfb60000 	C:\WINDOWS\SYSTEM32\iertutil.dll
+0x000001f782ba0000 - 0x000001f782c4d000 	C:\WINDOWS\System32\shcore.dll
+0x00007ff9c0250000 - 0x00007ff9c0278000 	C:\WINDOWS\SYSTEM32\srvcli.dll
+0x00007ff9cf4a0000 - 0x00007ff9cf4ac000 	C:\WINDOWS\SYSTEM32\netutils.dll
+0x00007ff997a70000 - 0x00007ff997acb000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_cython.cp39-win_amd64.pyd
+0x00007ff9cae70000 - 0x00007ff9cae77000 	C:\WINDOWS\system32\wshunix.dll
+0x000001f783110000 - 0x000001f783118000 	C:\WINDOWS\System32\NSI.dll
+0x00007ff9ca5c0000 - 0x00007ff9ca5d7000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x00007ff9ca5a0000 - 0x00007ff9ca5bd000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x00007ff9cf330000 - 0x00007ff9cf3fb000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ff986e90000 - 0x00007ff986eb7000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\win32\win32security.pyd
+0x00007ff9c56b0000 - 0x00007ff9c56c8000 	C:\WINDOWS\SYSTEM32\NETAPI32.dll
+0x000001f783160000 - 0x000001f783163000 	C:\WINDOWS\SYSTEM32\security.dll
+0x00007ff986220000 - 0x00007ff98624a000 	C:\WINDOWS\SYSTEM32\ntdsapi.dll
+0x00007ff9cf450000 - 0x00007ff9cf492000 	C:\WINDOWS\SYSTEM32\LOGONCLI.DLL
+0x00007ff9c64d0000 - 0x00007ff9c6510000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\asmjit.dll
+0x00007ff9a4f70000 - 0x00007ff9a4fdb000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\c10.dll
+0x00007ff9cdaf0000 - 0x00007ff9cdcd4000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+0x00007ff948b10000 - 0x00007ff949deb000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\caffe2_detectron_ops.dll
+0x00007ff948900000 - 0x00007ff948b0f000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\libiomp5md.dll
+0x00007ff8e49e0000 - 0x00007ff8f0a8d000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\torch_cpu.dll
+0x00007ff9485d0000 - 0x00007ff9488fc000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\fbgemm.dll
+0x00007ff9c72f0000 - 0x00007ff9c7305000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\caffe2_module_test_dynamic.dll
+0x00007ff98c620000 - 0x00007ff98c6fb000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\caffe2_observers.dll
+0x00007ff9c64b0000 - 0x00007ff9c64cf000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\libiompstubs5md.dll
+0x00007ff9c6280000 - 0x00007ff9c6292000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\shm.dll
+0x00007ff9cb790000 - 0x00007ff9cb797000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\torch.dll
+0x00007ff9c6520000 - 0x00007ff9c6527000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\torch_global_deps.dll
+0x00007ff947be0000 - 0x00007ff9485cc000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\torch_python.dll
+0x00007ff947920000 - 0x00007ff947bdd000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\lib\uv.dll
+0x00007ff9cfd60000 - 0x00007ff9cfd8e000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ff9c64a0000 - 0x00007ff9c64a7000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\torch\_C.cp39-win_amd64.pyd
+0x0000000066100000 - 0x0000000067fa6000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\.libs\libopenblas.EL2C6PLE4ZYW3ECEVIV3OXXGRN2NRFM2.gfortran-win_amd64.dll
+0x00007ff947610000 - 0x00007ff947917000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\core\_multiarray_umath.cp39-win_amd64.pyd
+0x00007ff9b6750000 - 0x00007ff9b6772000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\core\_multiarray_tests.cp39-win_amd64.pyd
+0x00007ff9b6720000 - 0x00007ff9b674e000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\linalg\_umath_linalg.cp39-win_amd64.pyd
+0x00007ff9c6260000 - 0x00007ff9c6280000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\fft\_pocketfft_internal.cp39-win_amd64.pyd
+0x00007ff998b70000 - 0x00007ff998c04000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\random\mtrand.cp39-win_amd64.pyd
+0x00007ff9a4d90000 - 0x00007ff9a4db9000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\random\bit_generator.cp39-win_amd64.pyd
+0x00007ff98c5e0000 - 0x00007ff98c612000 	C:\Users\sizin\.conda\envs\setiment-pytorch\lib\site-packages\numpy\random\_common.cp39-win_amd64.pyd
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+java_command: <unknown>
+java_class_path (initial): C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\bin;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\aho-corasick.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\jhannanum-0.8.4.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\kkma-2.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\komoran-3.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\open-korean-text-2.1.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\scala-library-2.12.3.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\shineware-common-1.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\shineware-ds-1.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\snakeyaml-1.12.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\twitter-text-1.14.7.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\jhannanum-0.8.4.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\kkma-2.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\aho-corasick.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\shineware-common-1.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\shineware-ds-1.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\komoran-3.0.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\snakeyaml-1.12.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\scala-library-2.12.3.jar;C:\Users\sizin\.conda\envs\setiment-pytorch\Lib\site-packages\konlpy\java\open-korean-text-2.1.0.jar;C:\Users\sizin\.conda\e
+Launcher Type: generic
+
+Environment Variables:
+PATH=C:\Users\sizin\.conda\envs\setiment-pytorch;C:\Users\sizin\.conda\envs\setiment-pytorch\Library\mingw-w64\bin;C:\Users\sizin\.conda\envs\setiment-pytorch\Library\usr\bin;C:\Users\sizin\.conda\envs\setiment-pytorch\Library\bin;C:\Users\sizin\.conda\envs\setiment-pytorch\Scripts;C:\Users\sizin\.conda\envs\setiment-pytorch\bin;C:\ProgramData\Anaconda3\condabin;C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingw-w64\bin;C:\ProgramData\Anaconda3\Library\usr\bin;C:\ProgramData\Anaconda3\Library\bin;C:\ProgramData\Anaconda3\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.292-1\bin;C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.292-1\jre\bin;C:\Users\sizin\AppData\Local\Microsoft\WindowsApps;.;C:\Program Files\JetBrains\IntelliJ IDEA 2021.1.2\bin;.
+USERNAME=sizin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1348)
+
+CPU:total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 6 model 158 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16694796k(5182884k free), swap 67026444k(11503172k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.292-b10) for windows-amd64 JRE (1.8.0_292-b10), built on May  1 2021 15:27:06 by "Administrator" with MS VC++ 10.0 (VS2010)
+
+time: Wed Apr 06 01:38:48 2022
+timezone: 대한민국 표준시
+elapsed time: 5.443281 seconds (0d 0h 0m 5s)
+
