@@ -9,7 +9,7 @@ spec:
   default:
     predictor:
       serviceAccountName: kfserving-sa
-      sklearn:
+      tensorflow:
         storageUri: 's3://model/cifar10/'
         resources:
           limits:
@@ -22,5 +22,3 @@ spec:
       custom:
         container:
           image: amagong/cifar10-transformer:0.0.1
-
-
