@@ -95,7 +95,7 @@ if __name__ == '__main__':
     i = 0
     while True:
         i += 1
-        time.sleep(interval)
+        #time.sleep(interval)
         print('{} send data'.format(i))
         msg = get_msg(config['common_config'], topic)
         data_publisher.send_msg(msg)
