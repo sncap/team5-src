@@ -19,7 +19,7 @@ spec:
         kubernetes.io/os: linux
       containers:
       - name: data-processing-cancer
-        image: sncap/data_processing_cancer:v1.5
+        image: sncap/data_processing_cancer:v1.6
         resources:
           limits:
             cpu: 400m
