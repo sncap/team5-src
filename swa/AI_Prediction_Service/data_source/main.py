@@ -90,9 +90,11 @@ if __name__ == '__main__':
     print('topic', topic)
     data_publisher = DataPublisher(config['rabbit_config'], topic)
 
-    while True:
-        time.sleep(interval)
-        print('AV-03 GIT PUSH SYNC TEST')
+    #while True:
+    print('[AV-07, AV-08]Performance Test')
+    for i in range(100):
+        #time.sleep(interval)
+        print('{} send data'.format(i))
         msg = get_msg(config['common_config'], topic)
         data_publisher.send_msg(msg)
     '''    
