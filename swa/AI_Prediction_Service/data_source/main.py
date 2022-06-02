@@ -49,7 +49,7 @@ def get_msg(config, topic):
         msg = json.dumps({
             "data": img.tolist()
         })
-        print(msg[:100])
+        #print(msg[:100])
         return msg
     else:
         file_path = os.path.join(root, config['cancer_file_path'])
@@ -65,7 +65,7 @@ def get_msg(config, topic):
         msg = json.dumps({
             "data": [y.tolist()]
         })
-        print(msg)
+        #print(msg)
         return msg
 
 
@@ -92,7 +92,7 @@ if __name__ == '__main__':
 
     #while True:
     print('[AV-11]Performance Test')
-    for i in range(10000):
+    for i in range(5000):
         #time.sleep(interval)
         print('{} send data'.format(i))
         msg = get_msg(config['common_config'], topic)
