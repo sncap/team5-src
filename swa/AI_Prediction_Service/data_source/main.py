@@ -97,6 +97,9 @@ if __name__ == '__main__':
         print('{} send data'.format(i))
         msg = get_msg(config['common_config'], topic)
         data_publisher.send_msg(msg)
+    
+    while True:
+        print('dummy')
     '''    
     dps.append(DataPublisher(config['rabbit_config'], 'CANCER_DATA_SOURCE'))
     while True:
