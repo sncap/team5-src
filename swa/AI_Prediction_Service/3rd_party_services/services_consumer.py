@@ -17,8 +17,7 @@ class ServicesConsumer:
         body = json.loads(body)
         data = body['data']
         prediction_result = body['predictions']
-        print('method.exchange', method.exchange)
-        print("[{} {}] {}".format(method.exchange, prediction_result, data))
+        print("[{} {}] {}".format(method.exchange, prediction_result, data[:10]))
 
     def connect(self):
         if self.is_connected:
