@@ -19,7 +19,7 @@ spec:
         kubernetes.io/os: linux
       containers:
       - name: data-source-cifar10
-        image: sncap/data_source_cifar10:v1.4
+        image: sncap/data_source_cifar10:v1.5
         resources:
           limits:
             cpu: 400m
