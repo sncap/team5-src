@@ -91,15 +91,15 @@ if __name__ == '__main__':
     data_publisher = DataPublisher(config['rabbit_config'], topic)
 
     #while True:
-    print('[AV-07, AV-08]Performance Test')
-    for i in range(100):
+    print('[AV-11]Performance Test')
+    for i in range(10000):
         #time.sleep(interval)
         print('{} send data'.format(i))
         msg = get_msg(config['common_config'], topic)
         data_publisher.send_msg(msg)
     
     while True:
-        print('dummy')
+        pass
     '''    
     dps.append(DataPublisher(config['rabbit_config'], 'CANCER_DATA_SOURCE'))
     while True:
