@@ -39,7 +39,7 @@ spec:
     kind: Deployment  #  스케일 아웃할 타겟의 종류 (deployment, replicaset 등)
     name: data-source-cancer
   minReplicas: 1  # 최소 replicas 개수
-  maxReplicas: 5  # 최대 replicas 개수
+  maxReplicas: 1  # 최대 replicas 개수
   metrics:
   - resource:
       name: cpu  # HPA를 구성할 리소스(CPU, MEM 등)
