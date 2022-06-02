@@ -93,7 +93,7 @@ if __name__ == '__main__':
     #while True:
     print('[AV-11]Performance Test')
     for i in range(1000):
-        #time.sleep(0.001)
+        #time.sleep(0.01)
         print('{} send data'.format(i))
         msg = get_msg(config['common_config'], topic)
         data_publisher.send_msg(msg)
