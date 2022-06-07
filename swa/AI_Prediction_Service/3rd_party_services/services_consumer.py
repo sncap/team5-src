@@ -1,6 +1,8 @@
 import pika
 import json
 import argparse
+global i
+i = 0
 
 class ServicesConsumer:
     def __init__(self, config):
@@ -14,10 +16,13 @@ class ServicesConsumer:
 
 
     def callback(self, ch, method, properties, body):
+        global i
+        i += 1
+        
         body = json.loads(body)
         data = body['data']
         prediction_result = body['predictions']
-        print("[{} {}] {}".format(method.exchange, prediction_result, data[:10]))
+        print("[{} {} {}] {}".format(i, method.exchange, prediction_result, data[:10]))
 
     def connect(self):
         if self.is_connected:
