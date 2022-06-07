@@ -14,5 +14,8 @@ VOLUME ["/DATA"]
 WORKDIR /workspace/AI_Prediction_Service
 
 #CMD /data/start.sh 192.168.0.116 5672 0 500
-CMD /data/start.sh 192.168.0.120 5672 0 50
+#CMD /data/start.sh 192.168.0.120 5672 0 50
+CMD /data/start.sh 10.106.43.10 5672 0 50
+
+
 
