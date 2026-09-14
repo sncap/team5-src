@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.BbobboPet" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#FDF4E6</item>
+        <item name="android:navigationBarColor">#FDF4E6</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
