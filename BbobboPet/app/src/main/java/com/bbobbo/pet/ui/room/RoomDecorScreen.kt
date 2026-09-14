@@ -20,8 +20,10 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -37,6 +39,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import com.bbobbo.pet.data.local.RoomPlacementEntity
 import com.bbobbo.pet.domain.Currency
@@ -47,6 +50,7 @@ import com.bbobbo.pet.domain.PetAnim
 import com.bbobbo.pet.domain.WearSlot
 import com.bbobbo.pet.ui.actions.ScreenHeader
 import com.bbobbo.pet.ui.common.PetViewModel
+import com.bbobbo.pet.domain.RoomLayout
 import com.bbobbo.pet.ui.components.BouncyButton
 import com.bbobbo.pet.ui.components.PetCharacter
 import com.bbobbo.pet.ui.components.PillTabs
@@ -61,6 +65,8 @@ fun RoomDecorScreen(vm: PetViewModel, onBack: () -> Unit) {
     var shopMode by remember { mutableStateOf(false) }
     var category by remember { mutableIntStateOf(0) }
     var selectedPlacement by remember { mutableStateOf<Long?>(null) }
+    var confirmReset by remember { mutableStateOf(false) }
+    val canUndo by vm.canUndo.collectAsState()
 
     val categories = FurnitureCategory.entries.toList()
     val cozy = placements.sumOf { Furnitures.byId(it.itemId)?.cozy ?: 0 }
@@ -91,6 +97,9 @@ fun RoomDecorScreen(vm: PetViewModel, onBack: () -> Unit) {
         ) {
             val w = maxWidth
             val h = maxHeight
+            val density = LocalDensity.current
+            val roomWidthPx = with(density) { w.toPx() }
+            val roomHeightPx = with(density) { h.toPx() }
 
             placements.forEach { p ->
                 val f = Furnitures.byId(p.itemId) ?: return@forEach
@@ -106,12 +115,16 @@ fun RoomDecorScreen(vm: PetViewModel, onBack: () -> Unit) {
                         )
                         .clickable { selectedPlacement = if (selected) null else p.id }
                         .pointerInput(p.id) {
-                            detectDragGestures { change, drag ->
-                                change.consume()
-                                val nx = (p.x + drag.x / size.width.toFloat() / 6f).coerceIn(0.05f, 0.95f)
-                                val ny = (p.y + drag.y / size.height.toFloat() / 6f).coerceIn(0.05f, 0.95f)
-                                vm.movePlacement(p, nx, ny)
-                            }
+                            detectDragGestures(
+                                onDragStart = { vm.beginPlacementDrag() },
+                                onDrag = { change, drag ->
+                                    change.consume()
+                                    // 방(BoxWithConstraints) 전체 크기 기준으로 정규화 좌표를 옮긴다.
+                                    val nx = p.x + drag.x / roomWidthPx
+                                    val ny = p.y + drag.y / roomHeightPx
+                                    vm.movePlacement(p, nx, ny)
+                                }
+                            )
                         },
                     contentAlignment = Alignment.Center
                 ) {
@@ -138,7 +151,9 @@ fun RoomDecorScreen(vm: PetViewModel, onBack: () -> Unit) {
                     .padding(horizontal = 10.dp, vertical = 6.dp)
             ) {
                 Text(
-                    "방 등급 $grade  ·  아늑함 $cozy  ·  일일 🪙$bonus",
+                    "방 등급 $grade · 아늑함 $cozy · 일일 🪙$bonus   " +
+                        "가구 ${vm.placedCount(FurnitureCategory.FURNITURE)}/${RoomLayout.MAX_FURNITURE} · " +
+                        "소품 ${vm.placedCount(FurnitureCategory.PROP)}/${RoomLayout.MAX_PROP}",
                     style = MaterialTheme.typography.labelSmall,
                     color = Palette.TextBrown
                 )
@@ -179,15 +194,36 @@ fun RoomDecorScreen(vm: PetViewModel, onBack: () -> Unit) {
         }
 
         if (!shopMode) {
-            Row(Modifier.fillMaxWidth().padding(vertical = 10.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Row(
+                Modifier.fillMaxWidth().padding(top = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                BouncyButton(
+                    onClick = { vm.undoPlacement(); selectedPlacement = null },
+                    modifier = Modifier.weight(1f).height(42.dp),
+                    enabled = canUndo,
+                    color = Palette.CardBeige
+                ) {
+                    Text("↩ 되돌리기", style = MaterialTheme.typography.labelLarge, color = Palette.TextBrown)
+                }
+                BouncyButton(
+                    onClick = { confirmReset = true },
+                    modifier = Modifier.weight(1f).height(42.dp),
+                    enabled = placements.isNotEmpty(),
+                    color = Palette.CardBeige
+                ) {
+                    Text("초기화", style = MaterialTheme.typography.labelLarge, color = Palette.TextBrown)
+                }
                 BouncyButton(
                     onClick = { selectedPlacement?.let { vm.removePlacement(it); selectedPlacement = null } },
-                    modifier = Modifier.weight(1f).height(50.dp),
+                    modifier = Modifier.weight(1f).height(42.dp),
                     enabled = selectedPlacement != null,
                     color = Palette.CardBeige
                 ) {
-                    Text("선택 삭제", style = MaterialTheme.typography.titleMedium, color = Palette.TextBrown)
+                    Text("선택 삭제", style = MaterialTheme.typography.labelLarge, color = Palette.TextBrown)
                 }
+            }
+            Row(Modifier.fillMaxWidth().padding(vertical = 10.dp)) {
                 BouncyButton(
                     onClick = onBack,
                     modifier = Modifier.weight(1f).height(50.dp),
@@ -200,6 +236,25 @@ fun RoomDecorScreen(vm: PetViewModel, onBack: () -> Unit) {
             Spacer(Modifier.height(16.dp))
         }
     }
+
+    if (confirmReset) {
+        ResetDialog(
+            onConfirm = { vm.clearPlacements(); selectedPlacement = null; confirmReset = false },
+            onDismiss = { confirmReset = false },
+        )
+    }
+}
+
+@Composable
+private fun ResetDialog(onConfirm: () -> Unit, onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = { TextButton(onClick = onConfirm) { Text("전부 치우기") } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text("취소") } },
+        title = { Text("방을 초기화할까요?") },
+        text = { Text("놓아둔 가구와 소품이 모두 보관함으로 돌아가요. 되돌리기로 복구할 수 있어요.") },
+        containerColor = Palette.CardWhite,
+    )
 }
 
 @Composable

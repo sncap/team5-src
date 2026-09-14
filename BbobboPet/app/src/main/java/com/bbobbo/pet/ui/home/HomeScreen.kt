@@ -33,6 +33,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -52,6 +53,8 @@ import com.bbobbo.pet.domain.WearSlot
 import com.bbobbo.pet.ui.Routes
 import com.bbobbo.pet.ui.common.PetViewModel
 import com.bbobbo.pet.ui.common.UiEvent
+import com.bbobbo.pet.ui.common.PetViewModel.Companion.ENERGY_REFILL_HEARTS
+import com.bbobbo.pet.ui.components.BouncyButton
 import com.bbobbo.pet.ui.components.CurrencyChip
 import com.bbobbo.pet.ui.components.MenuTile
 import com.bbobbo.pet.ui.components.PetCharacter
@@ -70,9 +73,12 @@ fun HomeScreen(vm: PetViewModel, nav: NavController) {
     val event by vm.event.collectAsState()
     val welcome by vm.welcome.collectAsState()
     val attendance by vm.attendanceDay.collectAsState()
+    val walkResult by vm.walkResult.collectAsState()
+    val milestone by vm.milestone.collectAsState()
 
     var showFeed by remember { mutableStateOf(false) }
     var showMissions by remember { mutableStateOf(false) }
+    var showEnergy by remember { mutableStateOf(false) }
     var bubbleIndex by remember { mutableIntStateOf(0) }
     val sheetState = rememberModalBottomSheetState()
 
@@ -81,6 +87,16 @@ fun HomeScreen(vm: PetViewModel, nav: NavController) {
         while (true) {
             delay(8000)
             bubbleIndex++
+        }
+    }
+
+    // 산책은 화면 밖에서도 진행되므로, 홈에서 남은 시간을 보여주고 끝나면 정산을 트리거한다.
+    var walkRemaining by remember { mutableLongStateOf(vm.walkRemainingMs()) }
+    LaunchedEffect(pet.walkEndAt) {
+        while (true) {
+            walkRemaining = vm.walkRemainingMs()
+            if (pet.walkEndAt != null && walkRemaining <= 0L) vm.checkWalkFinished()
+            delay(1000)
         }
     }
 
@@ -104,12 +120,19 @@ fun HomeScreen(vm: PetViewModel, nav: NavController) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column {
-                Text("뽀뽀 키우기", style = MaterialTheme.typography.headlineMedium, color = Palette.TextBrown)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(pet.name, style = MaterialTheme.typography.headlineMedium, color = Palette.TextBrown)
+                    Text(
+                        "  ⚙️",
+                        modifier = Modifier.clickable { nav.navigate(Routes.SETTINGS) },
+                        style = MaterialTheme.typography.titleMedium,
+                    )
+                }
                 Text("BBOBBO PET", style = MaterialTheme.typography.labelSmall, color = Palette.SubText)
             }
             Column(horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                CurrencyChip("🪙", "%,d".format(pet.coin))
-                CurrencyChip("💗", "${pet.heart}")
+                CurrencyChip("🪙", "%,d".format(pet.coin), onPlus = { nav.navigate(Routes.SHOP) })
+                CurrencyChip("💗", "${pet.heart}", onPlus = { nav.navigate(Routes.SHOP) })
             }
         }
 
@@ -169,6 +192,32 @@ fun HomeScreen(vm: PetViewModel, nav: NavController) {
             }
         }
 
+        // ---- 산책 진행 배너 ----
+        if (walkRemaining > 0L) {
+            Spacer(Modifier.height(8.dp))
+            SoftCard(
+                Modifier
+                    .fillMaxWidth()
+                    .clickable { nav.navigate(Routes.WALK) },
+                color = Palette.Mint.copy(alpha = 0.45f)
+            ) {
+                Row(Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text("🌳", style = MaterialTheme.typography.titleLarge)
+                    Text(
+                        "산책 중이에요",
+                        modifier = Modifier.padding(start = 10.dp).weight(1f),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = Palette.TextBrown
+                    )
+                    Text(
+                        formatWalkRemaining(walkRemaining),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = Palette.TextBrown
+                    )
+                }
+            }
+        }
+
         Spacer(Modifier.height(6.dp))
 
         // ---- 캐릭터 무대 ----
@@ -181,7 +230,7 @@ fun HomeScreen(vm: PetViewModel, nav: NavController) {
             PetCharacter(
                 modifier = Modifier
                     .fillMaxSize()
-                    .pointerInput(Unit) { detectTapGestures(onTap = { vm.touch() }, onLongPress = { vm.touch() }) },
+                    .pointerInput(Unit) { detectTapGestures(onTap = { vm.touch() }, onLongPress = { vm.stroke() }) },
                 anim = anim,
                 hatId = vm.equippedId(WearSlot.HAT),
                 clothId = vm.equippedId(WearSlot.CLOTH),
@@ -245,15 +294,19 @@ fun HomeScreen(vm: PetViewModel, nav: NavController) {
 
         // ---- 서브 메뉴 ----
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            MenuTile("미니게임", "🎮", Palette.CardWhite, { nav.navigate(Routes.GAME) }, Modifier.weight(1f))
+            MenuTile(
+                "미니게임", "🎮", Palette.CardWhite,
+                { if (pet.energy < 10f) showEnergy = true else nav.navigate(Routes.GAME) },
+                Modifier.weight(1f)
+            )
             MenuTile("옷장", "👕", Palette.CardWhite, { nav.navigate(Routes.WARDROBE) }, Modifier.weight(1f))
             MenuTile("방꾸미기", "🛋️", Palette.CardWhite, { nav.navigate(Routes.ROOM) }, Modifier.weight(1f))
         }
         Spacer(Modifier.height(8.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            MenuTile("산책", "🌳", Palette.CardWhite, { vm.play("walk", 0.8f) }, Modifier.weight(1f))
-            MenuTile("도감", "📖", Palette.CardWhite, { }, Modifier.weight(1f))
-            MenuTile("출석체크", "🗓️", Palette.CardWhite, { }, Modifier.weight(1f))
+            MenuTile("산책", "🌳", Palette.CardWhite, { nav.navigate(Routes.WALK) }, Modifier.weight(1f))
+            MenuTile("도감", "📖", Palette.CardWhite, { nav.navigate(Routes.COLLECTION) }, Modifier.weight(1f))
+            MenuTile("출석체크", "🗓️", Palette.CardWhite, { nav.navigate(Routes.ATTENDANCE) }, Modifier.weight(1f))
         }
 
         Spacer(Modifier.height(28.dp))
@@ -316,6 +369,56 @@ fun HomeScreen(vm: PetViewModel, nav: NavController) {
         )
     }
 
+    // ---- 산책 결과 팝업 ----
+    walkResult?.let { r ->
+        AlertDialog(
+            onDismissRequest = { vm.consumeWalkResult() },
+            confirmButton = { TextButton(onClick = { vm.consumeWalkResult() }) { Text("좋아요!") } },
+            title = { Text("${r.event.emoji}  ${r.event.title}") },
+            text = { Text(r.total.summary()) },
+            containerColor = Palette.CardWhite
+        )
+    }
+
+    // ---- 도감 마일스톤 팝업 ----
+    milestone?.let { m ->
+        AlertDialog(
+            onDismissRequest = { vm.consumeMilestone() },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.consumeMilestone()
+                    nav.navigate(Routes.COLLECTION)
+                }) { Text("도감 보기") }
+            },
+            dismissButton = { TextButton(onClick = { vm.consumeMilestone() }) { Text("닫기") } },
+            title = { Text("도감 ${m.percent}% 달성!") },
+            text = { Text("보상으로 ${m.rewardLabel}을(를) 받았어요") },
+            containerColor = Palette.CardWhite
+        )
+    }
+
+    // ---- 에너지 부족 팝업 (기획서 §1-4) ----
+    if (showEnergy) {
+        AlertDialog(
+            onDismissRequest = { showEnergy = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    showEnergy = false
+                    nav.navigate(Routes.SLEEP)
+                }) { Text("재우기") }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = { if (vm.refillEnergyWithHearts()) showEnergy = false },
+                    enabled = pet.heart >= ENERGY_REFILL_HEARTS
+                ) { Text("💗 ${ENERGY_REFILL_HEARTS}개로 완충") }
+            },
+            title = { Text("에너지가 부족해요!") },
+            text = { Text("${pet.name}를 재우면 시간당 15씩 회복돼요. 지금 바로 채울 수도 있어요.") },
+            containerColor = Palette.CardWhite
+        )
+    }
+
     // ---- 토스트 ----
     EventToast(event) { vm.consumeEvent() }
 }
@@ -368,4 +471,9 @@ private fun pickLine(mood: PetMood, fullness: Float, clean: Float, happy: Float,
         "작은 하루도 특별해져요"
     )
     return normal[seed % normal.size]
+}
+
+private fun formatWalkRemaining(ms: Long): String {
+    val totalSec = (ms / 1000).toInt()
+    return "%02d:%02d".format(totalSec / 60, totalSec % 60)
 }

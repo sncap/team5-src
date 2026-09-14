@@ -1,7 +1,9 @@
 <resources>
+    <!-- windowLightNavigationBar 는 API 27 부터라 minSdk 26 본체와 분리해 둔다. -->
     <style name="Theme.BbobboPet" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">#FDF4E6</item>
         <item name="android:navigationBarColor">#FDF4E6</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 </resources>

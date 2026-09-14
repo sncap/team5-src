@@ -22,8 +22,26 @@ data class PetStateEntity(
     val freeFoodUsedCount: Int = 0,
     val lastSeenAt: Long = System.currentTimeMillis(),
     val lastTouchAt: Long = 0L,
+    val lastPetAt: Long = 0L,
     val bestGameScore: Int = 0,
+    val bestGameCombo: Int = 0,
     val createdAt: Long = System.currentTimeMillis(),
+    // ---- v2 ----
+    /** 온보딩(이름 짓기·튜토리얼)을 마쳤는지 */
+    val onboarded: Boolean = false,
+    /** 산책 일일 횟수 제한용 */
+    val walkCountDate: String = "",
+    val walkCount: Int = 0,
+    /** 방 등급 일일 보너스를 마지막으로 지급한 날 */
+    val roomBonusDate: String = "",
+    /** 도감 마일스톤을 마지막으로 수령한 단계(%) */
+    val collectionMilestone: Int = 0,
+    // 누적 기록 (하단 탭 '뽀뽀' 상세)
+    val totalFeed: Int = 0,
+    val totalBath: Int = 0,
+    val totalPlay: Int = 0,
+    val totalWalk: Int = 0,
+    val totalGame: Int = 0,
 )
 
 @Entity(tableName = "inventory")
@@ -59,4 +77,21 @@ data class AttendanceEntity(
     @PrimaryKey val date: String,
     val streakDay: Int,
     val claimed: Boolean = false,
+)
+
+/** S-10 도감. 해금된 항목만 행이 생긴다. */
+@Entity(tableName = "collection_entry")
+data class CollectionEntity(
+    @PrimaryKey val entryId: String,
+    val unlockedAt: Long = System.currentTimeMillis(),
+)
+
+/** S-07 코디 세트 저장 슬롯 (1~5) */
+@Entity(tableName = "outfit_set")
+data class OutfitSetEntity(
+    @PrimaryKey val slot: Int,
+    val setName: String,
+    val hatId: String,
+    val clothId: String,
+    val accId: String,
 )

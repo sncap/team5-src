@@ -19,7 +19,11 @@ object StatEngine {
      * - 기기 시간을 되돌린 경우(now < lastSeenAt) 경과시간 0으로 처리해 치트를 막는다.
      * - 오프라인 감소는 최대 12시간치까지만 적용한다.
      */
-    fun applyElapsed(state: PetStateEntity, now: Long = System.currentTimeMillis()): DecayResult {
+    fun applyElapsed(
+        state: PetStateEntity,
+        now: Long = System.currentTimeMillis(),
+        perks: Perks = Perks.NONE,
+    ): DecayResult {
         val rawHours = (now - state.lastSeenAt) / 3_600_000f
         if (rawHours <= 0f) {
             return DecayResult(state.copy(lastSeenAt = now), 0f, false)
@@ -36,17 +40,18 @@ object StatEngine {
             val sleptMs = (min(now, sleepEnd) - state.lastSeenAt).coerceAtLeast(0L)
             val sleptHours = sleptMs / 3_600_000f
             val awakeHours = (capped - sleptHours).coerceAtLeast(0f)
-            sleptHours * Balance.SLEEP_ENERGY_PER_HOUR + awakeHours * Balance.ENERGY_RECOVER_PER_HOUR
+            sleptHours * Balance.SLEEP_ENERGY_PER_HOUR * perks.sleepEnergyMul +
+                awakeHours * Balance.ENERGY_RECOVER_PER_HOUR
         } else {
             capped * Balance.ENERGY_RECOVER_PER_HOUR
         }
 
         val next = state.copy(
             fullness = clamp(state.fullness - capped * Balance.DECAY_FULLNESS * decayMul),
-            mood = clamp(state.mood - capped * Balance.DECAY_MOOD * decayMul),
-            clean = clamp(state.clean - capped * Balance.DECAY_CLEAN),
+            mood = clamp(state.mood - capped * (Balance.DECAY_MOOD * decayMul - perks.moodPerHour)),
+            clean = clamp(state.clean - capped * Balance.DECAY_CLEAN * perks.cleanDecayMul),
             energy = clamp(energy),
-            bond = clamp(state.bond - capped * Balance.DECAY_BOND),
+            bond = clamp(state.bond - capped * (Balance.DECAY_BOND - perks.bondPerHour)),
             sleepEndAt = if (state.sleepEndAt != null && now >= state.sleepEndAt) null else state.sleepEndAt,
             walkEndAt = if (state.walkEndAt != null && now >= state.walkEndAt) null else state.walkEndAt,
             lastSeenAt = now,
@@ -54,8 +59,15 @@ object StatEngine {
         return DecayResult(next, rawHours, rawHours > 0.05f)
     }
 
-    /** 스탯/재화 변화 적용 + 레벨업 판정. 반환: (상태, 오른 레벨 수) */
-    fun apply(state: PetStateEntity, c: StatChange): Pair<PetStateEntity, Int> {
+    /**
+     * 스탯/재화 변화 적용 + 레벨업 판정. 반환: (상태, 오른 레벨 수)
+     * [perks] 의 코인 획득 보너스는 여기서 한 번만 적용된다.
+     */
+    fun apply(
+        state: PetStateEntity,
+        c: StatChange,
+        perks: Perks = Perks.NONE,
+    ): Pair<PetStateEntity, Int> {
         var level = state.level
         var exp = state.exp + c.exp
         var bonusCoin = 0L
@@ -72,7 +84,7 @@ object StatEngine {
             clean = clamp(state.clean + c.clean),
             energy = clamp(state.energy + c.energy),
             bond = clamp(state.bond + c.bond),
-            coin = (state.coin + c.coin + bonusCoin).coerceAtLeast(0),
+            coin = (state.coin + perks.applyCoin(c.coin) + bonusCoin).coerceAtLeast(0),
             heart = (state.heart + c.heart).coerceAtLeast(0),
             level = level,
             exp = exp,

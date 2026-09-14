@@ -56,6 +56,18 @@ data class StatChange(
         if (heart != 0) add("하트 +$heart")
     }.joinToString(" · ")
 
+    /** 산책 기본 보상 + 이벤트 보상처럼 두 변화를 합칠 때 쓴다. */
+    operator fun plus(other: StatChange) = StatChange(
+        fullness = fullness + other.fullness,
+        mood = mood + other.mood,
+        clean = clean + other.clean,
+        energy = energy + other.energy,
+        bond = bond + other.bond,
+        exp = exp + other.exp,
+        coin = coin + other.coin,
+        heart = heart + other.heart,
+    )
+
     private fun signed(v: Float): String {
         val i = v.toInt()
         return if (v >= 0) "+$i" else "$i"
@@ -92,7 +104,9 @@ object Foods {
     fun byId(id: String) = ALL.first { it.id == id }
 }
 
-enum class WearSlot(val label: String) { HAT("모자"), CLOTH("옷"), ACC("액세서리") }
+enum class WearSlot(val label: String, val emoji: String) {
+    HAT("모자", "🎩"), CLOTH("옷", "👕"), ACC("액세서리", "🎀")
+}
 
 data class WearItem(
     val id: String,
@@ -184,6 +198,8 @@ object Missions {
         MissionDef("m_play2", "뽀뽀와 2번 놀아주기", 2, rewardCoin = 120),
         MissionDef("m_dress1", "옷 갈아입히기 1번", 1, rewardHeart = 3),
         MissionDef("m_touch5", "뽀뽀 5번 쓰다듬기", 5, rewardCoin = 60),
+        MissionDef("m_walk1", "산책 1번 다녀오기", 1, rewardCoin = 120),
+        MissionDef("m_bond90", "친밀도 90 이상 만들기", 1, rewardHeart = 5),
     )
     fun byId(id: String) = POOL.first { it.id == id }
 }
@@ -199,4 +215,200 @@ object Attendance {
         "딸기 간식" to StatChange(coin = 250),
         "하트 10 + 꼬깔 모자" to StatChange(heart = 10),
     )
+}
+
+// ---------------------------------------------------------------------------
+// S-09 산책
+// ---------------------------------------------------------------------------
+
+/** 산책 완료 시 1개가 뽑히는 랜덤 이벤트. weight 가 클수록 자주 나온다. */
+data class WalkEvent(
+    val id: String,
+    val title: String,
+    val emoji: String,
+    val weight: Int,
+    val effect: StatChange,
+    /** 이 이벤트로 해금되는 도감 항목 (없으면 null) */
+    val collectionId: String? = null,
+)
+
+object Walks {
+    /** 소모 에너지 / 진행 시간 / 일일 횟수 제한 (기획서 S-09) */
+    const val ENERGY_COST = 15f
+    const val DURATION_MS = 3 * 60_000L
+    const val DAILY_LIMIT = 3
+
+    /** 산책 자체의 고정 보상. 랜덤 이벤트 보상은 여기에 더해진다. */
+    val BASE_REWARD = StatChange(mood = 15f, energy = -ENERGY_COST, exp = 15)
+
+    val EVENTS = listOf(
+        WalkEvent(
+            "w_acorn", "도토리를 주웠어요", "🌰", 30,
+            StatChange(coin = 150), "friend_acorn"
+        ),
+        WalkEvent(
+            "w_butterfly", "나비를 만났어요", "🦋", 25,
+            StatChange(mood = 15f), "friend_butterfly"
+        ),
+        WalkEvent(
+            "w_friend", "친구를 만났어요", "🐰", 20,
+            StatChange(bond = 5f, heart = 1), "friend_rabbit"
+        ),
+        WalkEvent(
+            "w_rain", "비가 왔어요", "🌧️", 15,
+            StatChange(clean = -15f, mood = 5f), "friend_cloud"
+        ),
+        WalkEvent(
+            "w_flower", "꽃밭을 지나왔어요", "🌷", 10,
+            StatChange(mood = 10f, coin = 80), "friend_flower"
+        ),
+    )
+
+    /** weight 기반 가중 추첨. [roll] 은 0f..1f 범위의 난수. */
+    fun pick(roll: Float): WalkEvent {
+        val total = EVENTS.sumOf { it.weight }
+        var cursor = (roll.coerceIn(0f, 0.999f) * total)
+        for (e in EVENTS) {
+            cursor -= e.weight
+            if (cursor < 0f) return e
+        }
+        return EVENTS.last()
+    }
+}
+
+// ---------------------------------------------------------------------------
+// S-10 도감
+// ---------------------------------------------------------------------------
+
+enum class CollectionTab(val label: String) {
+    FOOD("음식"), CLOTH("의상"), FURNITURE("가구"), FRIEND("친구"), MOMENT("순간")
+}
+
+data class CollectionEntry(
+    val id: String,
+    val tab: CollectionTab,
+    val name: String,
+    val emoji: String,
+    val desc: String,
+)
+
+object Collections {
+    /** 음식·의상·가구는 각 마스터 테이블에서 자동 생성하고, 친구/순간만 직접 정의한다. */
+    private val FRIENDS = listOf(
+        CollectionEntry("friend_acorn", CollectionTab.FRIEND, "도토리", "🌰", "산책길에 주운 반질반질한 도토리"),
+        CollectionEntry("friend_butterfly", CollectionTab.FRIEND, "나비", "🦋", "뽀뽀 코에 살짝 앉았다 날아갔어요"),
+        CollectionEntry("friend_rabbit", CollectionTab.FRIEND, "토끼 친구", "🐰", "산책길에서 만난 이웃집 토끼"),
+        CollectionEntry("friend_cloud", CollectionTab.FRIEND, "비구름", "🌧️", "갑자기 쏟아진 소나기"),
+        CollectionEntry("friend_flower", CollectionTab.FRIEND, "꽃밭", "🌷", "봄이 한가득 피어난 자리"),
+    )
+
+    private val MOMENTS = listOf(
+        CollectionEntry("moment_first_feed", CollectionTab.MOMENT, "첫 식사", "🥣", "뽀뽀에게 처음 밥을 준 날"),
+        CollectionEntry("moment_first_bath", CollectionTab.MOMENT, "첫 목욕", "🛁", "뽀득뽀득 처음 씻긴 날"),
+        CollectionEntry("moment_first_sleep", CollectionTab.MOMENT, "첫 잠", "🌙", "쿨쿨 잠든 모습을 처음 본 날"),
+        CollectionEntry("moment_first_game", CollectionTab.MOMENT, "첫 미니게임", "🎮", "간식 잡기를 처음 해본 날"),
+        CollectionEntry("moment_level5", CollectionTab.MOMENT, "쑥쑥 뽀뽀", "🌱", "Lv.5 를 달성한 날"),
+        CollectionEntry("moment_level10", CollectionTab.MOMENT, "행복한 뽀뽀", "✨", "Lv.10 을 달성한 날"),
+        CollectionEntry("moment_bond100", CollectionTab.MOMENT, "단짝", "💗", "친밀도가 가득 찬 날"),
+        CollectionEntry("moment_combo30", CollectionTab.MOMENT, "콤보 마스터", "🔥", "미니게임에서 30콤보를 달성한 날"),
+    )
+
+    val ALL: List<CollectionEntry> = buildList {
+        Foods.ALL.forEach {
+            add(CollectionEntry(it.id, CollectionTab.FOOD, it.name, it.emoji, it.desc))
+        }
+        Wardrobe.ALL.forEach {
+            add(CollectionEntry(it.id, CollectionTab.CLOTH, it.name, it.slot.emoji, it.perk ?: "뽀뽀의 ${it.slot.label}"))
+        }
+        Furnitures.ALL.forEach {
+            add(CollectionEntry(it.id, CollectionTab.FURNITURE, it.name, it.emoji, it.perk ?: "아늑함 +${it.cozy}"))
+        }
+        addAll(FRIENDS)
+        addAll(MOMENTS)
+    }
+
+    fun byTab(tab: CollectionTab) = ALL.filter { it.tab == tab }
+    fun byId(id: String) = ALL.firstOrNull { it.id == id }
+
+    /** 수집률 마일스톤 보상 (기획서 S-10) */
+    val MILESTONES = listOf(
+        Triple(25, "하트 10", StatChange(heart = 10)),
+        Triple(50, "하트 30", StatChange(heart = 30)),
+        Triple(75, "하트 50", StatChange(heart = 50)),
+        Triple(100, "하트 100", StatChange(heart = 100)),
+    )
+}
+
+// ---------------------------------------------------------------------------
+// T-29 세트 보너스
+// ---------------------------------------------------------------------------
+
+/** 지정 조합을 전부 착용하면 붙는 보너스. */
+data class OutfitBonus(
+    val id: String,
+    val name: String,
+    val hatId: String,
+    val clothId: String,
+    val accId: String,
+    val desc: String,
+    val moodPerHour: Float,
+    val coinBonusPercent: Int,
+)
+
+object OutfitBonuses {
+    val ALL = listOf(
+        OutfitBonus(
+            "set_bear", "곰돌이 세트", "hat_bear", "cloth_apron", "acc_ribbon",
+            "기분 +5 · 코인 획득 +10%", moodPerHour = 5f, coinBonusPercent = 10
+        ),
+        OutfitBonus(
+            "set_star", "별밤 세트", "hat_crown", "cloth_cape", "acc_bell",
+            "기분 +5 · 코인 획득 +15%", moodPerHour = 5f, coinBonusPercent = 15
+        ),
+        OutfitBonus(
+            "set_picnic", "소풍 세트", "hat_beret", "cloth_scarf", "acc_glasses",
+            "기분 +3 · 코인 획득 +5%", moodPerHour = 3f, coinBonusPercent = 5
+        ),
+    )
+
+    fun match(hatId: String, clothId: String, accId: String): OutfitBonus? =
+        ALL.firstOrNull { it.hatId == hatId && it.clothId == clothId && it.accId == accId }
+
+    /** 코디 세트 저장 슬롯 개수 (기획서 S-07) */
+    const val SLOT_COUNT = 5
+}
+
+// ---------------------------------------------------------------------------
+// T-39 알림
+// ---------------------------------------------------------------------------
+
+enum class NotifyKind(val key: String, val label: String, val desc: String) {
+    HUNGRY("notify_hungry", "배고픔 알림", "배고픔이 30 이하로 떨어지면 알려드려요"),
+    DIRTY("notify_dirty", "청결 알림", "청결이 30 이하로 떨어지면 알려드려요"),
+    ATTENDANCE("notify_attendance", "출석 알림", "매일 저녁 8시, 출석을 안 했으면 알려드려요"),
+    ENERGY("notify_energy", "에너지 알림", "에너지가 가득 차면 알려드려요"),
+}
+
+// ---------------------------------------------------------------------------
+// S-08 방 배치 규칙
+// ---------------------------------------------------------------------------
+
+object RoomLayout {
+    /** 바닥 타일 기준 그리드 칸 수. 배치 좌표는 이 격자에 스냅된다. */
+    const val GRID = 12
+
+    /** 배치 슬롯 제한 (기획서 S-08) */
+    const val MAX_FURNITURE = 12
+    const val MAX_PROP = 20
+
+    /** 0f..1f 좌표를 격자에 맞추고 화면 밖으로 나가지 않게 가둔다. */
+    fun snap(v: Float): Float =
+        (Math.round(v * GRID).toFloat() / GRID).coerceIn(1f / GRID, 1f - 1f / GRID)
+
+    /** 해당 카테고리를 더 놓을 수 있는지. 벽지·바닥은 배치 대상이 아니다. */
+    fun limitFor(category: FurnitureCategory): Int? = when (category) {
+        FurnitureCategory.FURNITURE -> MAX_FURNITURE
+        FurnitureCategory.PROP -> MAX_PROP
+        else -> null
+    }
 }

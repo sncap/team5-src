@@ -53,6 +53,16 @@ interface RoomPlacementDao {
 
     @Query("DELETE FROM room_placement")
     suspend fun clear()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(list: List<RoomPlacementEntity>)
+
+    /** 되돌리기(Undo)·초기화에서 배치 전체를 한 번에 갈아끼운다. */
+    @androidx.room.Transaction
+    suspend fun replaceAll(list: List<RoomPlacementEntity>) {
+        clear()
+        if (list.isNotEmpty()) insertAll(list)
+    }
 }
 
 @Dao
@@ -83,4 +93,28 @@ interface AttendanceDao {
 
     @Upsert
     suspend fun upsert(a: AttendanceEntity)
+}
+
+@Dao
+interface CollectionDao {
+    @Query("SELECT * FROM collection_entry")
+    fun observeAll(): Flow<List<CollectionEntity>>
+
+    @Query("SELECT * FROM collection_entry WHERE entryId = :id")
+    suspend fun get(id: String): CollectionEntity?
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(entry: CollectionEntity)
+}
+
+@Dao
+interface OutfitDao {
+    @Query("SELECT * FROM outfit_set ORDER BY slot ASC")
+    fun observeAll(): Flow<List<OutfitSetEntity>>
+
+    @Upsert
+    suspend fun upsert(set: OutfitSetEntity)
+
+    @Query("DELETE FROM outfit_set WHERE slot = :slot")
+    suspend fun delete(slot: Int)
 }

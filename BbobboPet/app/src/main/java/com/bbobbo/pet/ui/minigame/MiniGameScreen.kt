@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -35,6 +36,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.bbobbo.pet.domain.PetAnim
 import com.bbobbo.pet.domain.StatEngine
 import com.bbobbo.pet.domain.WearSlot
@@ -80,6 +84,21 @@ fun MiniGameScreen(vm: PetViewModel, onBack: () -> Unit) {
     var combo by remember { mutableStateOf(0) }
     var maxCombo by remember { mutableStateOf(0) }
     var timeLeft by remember { mutableStateOf(60f) }
+    // QA: 전화 수신·백그라운드 전환 시 게임을 멈춘다.
+    var paused by remember { mutableStateOf(false) }
+
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, e ->
+            when (e) {
+                Lifecycle.Event.ON_PAUSE -> paused = true
+                Lifecycle.Event.ON_RESUME -> paused = false
+                else -> Unit
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
     val petXState = remember { mutableStateOf(0.5f) }
     val snacks = remember { mutableListOf<Snack>().toMutableStateList() }
 
@@ -102,13 +121,31 @@ fun MiniGameScreen(vm: PetViewModel, onBack: () -> Unit) {
             Phase.PLAYING -> {
                 GameHud(score, combo, timeLeft)
                 Spacer(Modifier.height(8.dp))
-                GameField(vm = vm, snacks = snacks, petXState = petXState)
+                Box {
+                    GameField(vm = vm, snacks = snacks, petXState = petXState)
+                    if (paused) {
+                        Box(
+                            Modifier
+                                .matchParentSize()
+                                .background(Palette.TextBrown.copy(alpha = 0.55f)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                "일시정지",
+                                style = MaterialTheme.typography.headlineMedium,
+                                color = Color.White
+                            )
+                        }
+                    }
+                }
                 LaunchedEffect(Unit) {
                     var last = 0L
                     var spawnAcc = 0f
                     var nextId = 0L
                     while (timeLeft > 0f) {
                         withFrameNanos { now ->
+                            // 일시정지 중에는 시간 기준점만 새로 잡고 아무것도 진행하지 않는다.
+                            if (paused) { last = 0L; return@withFrameNanos }
                             val dt = if (last == 0L) 0f else (now - last) / 1_000_000_000f
                             last = now
                             if (dt <= 0f || dt > 0.2f) return@withFrameNanos
@@ -170,7 +207,7 @@ fun MiniGameScreen(vm: PetViewModel, onBack: () -> Unit) {
                             snacks.addAll(survivors)
                         }
                     }
-                    vm.finishMiniGame(score)
+                    vm.finishMiniGame(score, maxCombo)
                     phase = Phase.RESULT
                 }
             }
